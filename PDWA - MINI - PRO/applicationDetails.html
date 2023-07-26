@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin create drive form</title>
+    <link rel="stylesheet"href="">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/regular.min.js" integrity="sha512-H1PxHAj13z6ipNSlyM5ftUSOSvQXeH0eOsPjEpSOcjSROPLIxhKB0PLGSAbFDqEqe2vd2xPkUnEfVtBS/RNlmw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css" integrity="sha512-G/T7HQJXSeNV7mKMXeJKlYNJ0jrs8RsWzYG7rVACye+qrcUhEAYKYzaa+VFy6eFzM2+/JT1Q+eqBbZFSHmJQew==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/regular.min.css" integrity="sha512-k2UAKyvfA7Xd/6FrOv5SG4Qr9h4p2oaeshXF99WO3zIpCsgTJ3YZELDK0gHdlJE5ls+Mbd5HL50b458z3meB/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/v4-shims.min.js" integrity="sha512-wClfKJfh+9jD9QuJjurS6L5kPvT1vojiGkd2BjQ0aPL6ptsnoNNvCmNwrISYeIoaxKfOmbnI8ti3d/WjKztymQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/solid.min.js" integrity="sha512-F0Gp9qi8/3qyo+62Pi1ZgGe6hAUxPbzOnqhhpJYAMUGDmOys95dCRCVYfQawlUeoGp1Rj/K9V7NboA9sQ9BtKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+    
+    
+    
+    <style>
+
+        
+.ResumeShow{
+	width: 800px;
+	height: 650px;
+	/* background: #599cc0a9; */
+	margin: 10px;
+	padding: 0px;
+    margin-top: 10px;
+    margin-left: -38px;
+	border-radius: 5px;
+}
+        body,.container{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 15px;
+            background-color: grey;
+            margin-top: -80px;
+            
+        }
+        #contentsDiv{
+            border:1px solid rebeccapurple;
+            display: flex;
+            flex-direction: column;
+            margin: 50px;
+            height: 200vh;
+            padding: 50px;
+            width: 130vh;
+            border: none;
+            outline: none;
+            margin-left: 80px;
+            background-color: grey;
+        }
+        #fn{
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 50px;
+           color: black;
+           font-weight: 550;
+           text-transform: uppercase;
+           text-shadow: 0px 1px 5px teal;
+        }
+        #fn:hover{
+            color:teal;
+            text-shadow: 0px 1px 5px rgba(6, 7, 7, 0.756);
+        }
+     
+     .bar i{
+        color: rgb(7, 125, 101);
+        font-size: 50px;
+        padding:0;
+        margin:0;  
+        margin-top: 22px;     
+      } 
+     
+.bar label{
+   padding: 10px 50px;
+   margin-top: 5px;
+   margin-left:-20px;
+   margin-right: 10px;
+   font-size: 21px;
+   color: white;
+   text-align: center;
+    
+}
+      .bar{
+       font-size: 140%;
+        width: 940px;
+       border-radius:5px;
+       padding:0px 50px;
+      display: flex;
+      background-color: black;
+      margin-left: -38px;
+       box-shadow: 0px 5px 10px rgba(15, 95, 84, 0.756);
+      }
+       /* #ViewProfile{
+        background-color: black;
+        margin-top:500px;
+        color:rgb(245, 245, 251);
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 800;
+        border-radius: 5px;
+        margin-left: 700px;
+        width:200px;
+        padding: 15px;
+        border: none;
+        outline: none;
+       } */
+
+       /* #ViewProfile:hover{
+        background-color: teal;
+        color:black;
+        box-shadow: 0px 5px 10px rgba(20, 20, 20, 0.756); 
+
+       } */
+iframe{
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(15, 95, 84, 0.756);
+      }
+
+    </style>
+</head>
+<body> 
+    <div class="container">
+         <div id="contentsDiv">
+            <label id="fn"></label>
+           <div class="bar">  
+            <i class="fa-solid fa-building-columns"></i>     
+           <div>
+            <label id="Campus"></label>
+        </div>
+        <i class="fa-solid fa-user-graduate"></i>  
+          <div>
+            <label id="dept"></label>
+        </div>
+        <i class="fa-solid fa-id-badge"></i>
+           <div>
+            <label id="DriveId"></label>
+        </div>
+        <i class="fa-solid fa-registered"></i>
+    <div>
+            <label id="loc"> </label>
+        </div>
+            </div>
+
+<!-- ------------------------------------VARANUM--------------------------------------------------------- -->
+            
+<div class="ResumeShow">
+    <!-- <label id="resumename"></label> -->
+    <!-- <input type="text" id="namebox"> -->
+    <iframe id="myimg" frameborder="2" width="940px" height="1110px" ></iframe>
+    <!-- <button id="downbtn">download</button> -->
+            <!-- </div>
+             <button  id="ViewProfile"></button> 
+              </div> -->
+            </div>
+    
+    
+    <script type="module">
+           
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.0/firebase-app.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyCf8TkfipanvrO0Z_FHT9cHv5LvR9ImFfM",
+authDomain: "placementdrive-c2866.firebaseapp.com",
+databaseURL: "https://placementdrive-c2866-default-rtdb.firebaseio.com",
+projectId: "placementdrive-c2866",
+storageBucket: "placementdrive-c2866.appspot.com",
+messagingSenderId: "798924021032",
+appId: "1:798924021032:web:0fcf61762dadde9c42841d"
+};
+
+const app = initializeApp(firebaseConfig);
+import{getStorage,ref as sRef,uploadBytesResumable,getDownloadURL} 
+        from"https://www.gstatic.com/firebasejs/9.17.0/firebase-storage.js"
+
+import{getDatabase,ref,child,onValue,get}
+from "https://www.gstatic.com/firebasejs/9.17.0/firebase-database.js"
+
+const db=getDatabase();
+ 
+
+//  const createbtn=document.getElementById('ViewProfile');
+      
+const createbtn=document.getElementById('fn');
+
+//-------------------------------------REQUEST DRIVE DETAILS-------------------------------------------------------------
+        let Post=null;
+
+        window.onload=function(){
+            Post=localStorage.Post;
+            if(Post){
+                Post=JSON.parse(Post);
+                LoadPost();
+                GetUrlfromRealtimDB();
+            }
+        }
+        function LoadPost(){
+            
+            document.getElementById('fn').innerHTML= Post.FullName;
+            // document.getElementById('fn').innerText=window.location="StudentsProfileList.html";
+            document.getElementById('DriveId').innerHTML= "DriveID <br>";
+            document.getElementById('DriveId').innerHTML+= Post.DriveId;
+            document.getElementById('dept').innerHTML= "Department <br>";
+            document.getElementById('dept').innerHTML+= Post.Department;
+            document.getElementById('Campus').innerHTML= " Campus <br>";
+            // document.getElementById('ViewProfile').innerHTML= "View Profile";
+            document.getElementById('Campus').innerHTML+= "RGCET";
+
+            
+            // document.getElementById('resumename').innerHTML= Post.ResumeName;
+
+          
+
+            document.getElementById('loc').innerHTML= "RegisterNumber <br>";
+            document.getElementById('loc').innerHTML+= Post.RegisterNumber;
+           
+            // document.getElementById('ViewProfile').innerHTML="View Student Profile";
+         }
+//-------------------------SHOW RESUME--------------------------------------------------------
+
+const dbRef = ref(db);
+var reader=new FileReader();
+        // var sno=0;
+        // var tbody=document.getElementById('tbody1');
+        var myimg=document.getElementById('myimg');
+        var DownBtn=document.getElementById('downbtn');
+        // var namebox=document.getElementById('namebox');
+
+        var input = document.createElement('input');
+        input.type='file';
+
+        input.onchange = e =>{
+            files=e.target.files;
+
+            var extention = GetFileExt(files[0]);
+            var name= GetFileName(files[0]);
+
+            // namebox.value=(name+extension);
+            extlab.innerHTML=extention;
+            reader.readAsDataURL(files[0]);
+        }
+        reader.onload= function() {
+        
+            myimg.src= reader.result;
+            
+        }
+       function GetUrlfromRealtimDB() {
+        
+        var dbref=ref(db);
+
+        get(child(dbref,"ResumeLinks/"+Post.ResumeName)).then((snapshot)=>
+        {
+            if (snapshot.exists()) {
+                myimg.src=snapshot.val().ImgUrl;
+                
+            }
+        })
+
+        
+    }
+    // DownBtn.onclick=GetUrlfromRealtimDB;
+   
+
+         //---------------RADIO BUTTON SHOW AND HIDE CONTENTS ----------------------------------------------
+
+
+         $(document).ready(function(){
+		/* by default hide all radio_content div elements except first element */
+		$(".content .radio_content").hide();
+		$(".content .radio_content:first-child").show();
+
+		/* when any radio element is clicked, Get the attribute value of that clicked radio element and show the radio_content div element which matches the attribute value and hide the remaining tab content div elements */
+		$(".radio_wrap").click(function(){
+		  var current_raido = $(this).attr("data-radio");
+		  $(".content .radio_content").hide();
+		  $("."+current_raido).show();
+		})
+	});
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+         function ViewProfile(){
+        //  window.open('StudentsProfileList.html');
+        window.location="StudentsProfileList.html";
+          }
+
+         //----------------------------ASSIGNING EVENTS TO BTN CREATE DRIVE -------------------------------------
+        
+         createbtn.addEventListener('click',ViewProfile);
+
+
+  </script>
+</body>

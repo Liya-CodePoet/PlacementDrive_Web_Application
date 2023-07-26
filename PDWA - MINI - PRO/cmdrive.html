@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>company drive page</title>
+    <link rel="stylesheet"href="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+<style>
+    body{
+        height: 100vh;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+
+      #htmlload{
+        height: 620px;
+        width:105%;
+        margin-left: -90px;
+        margin-right: -100px;
+        margin-top: 50px;
+        border-radius: 12px;
+        box-shadow: 0 5px 10px rgb(9, 9, 11);
+      
+      }
+      .container{
+         max-width:98%; 
+        width:150rem;
+        height: 10px;
+        padding: 40px 50px  40px  40px;
+        background: #fff;
+        margin: 0 20px;
+        border-radius: 12px;
+        box-shadow: 0 5px 10px rgba(15, 8, 8, 0.2);
+      }
+       
+      .tabs{
+        display:flex;
+        align-items: center;
+        justify-content:center;
+      }
+      .tabs .list{
+        display:flex;
+        flex-direction: row;
+        width: 10%;
+        margin-top: -610px;
+        margin-left: -50px;
+        justify-content:center;
+        position:absolute;
+      }
+      .tabs .list label{
+        height: 90px;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 40px;
+        cursor: pointer;
+        padding-right: 80px;
+        padding-left: 160px;
+        transition: all 0.5s ease;
+        color: #333;
+        display:flex;
+        z-index: 2;
+      }
+      
+      .tabs .list label i{
+        line-height: 30px;
+        cursor:pointer;
+        transition: all 0.5s ease;
+        color: #333;
+        z-index: 12;
+      }
+      .tabs .list label span{
+        padding-left: 10px;
+        
+      }
+      #request:checked ~ .list label.request,
+      #activedrives:checked ~ .list label.activedrives,
+      #history:checked ~ .list label.history
+      {
+        color: rgb(5, 4, 4);
+      }
+      .tabs .list label:hover{
+        color: #5a50e2;
+       
+      }
+     
+      .tabs .slider{
+        position: absolute;
+       margin-left: -26rem;
+        top: -10px;
+        height: 60px;
+        box-shadow: 0 5px 10px rgba(72, 55, 227, 0.831);
+        width: 250px;
+        border-radius: 10px;
+        background: #2e18f17b;
+        transition: all 0.4s ease;
+      }
+      #request:checked ~ .list .slider{
+        left:10px;
+      }
+     
+      #activedrives:checked ~ .list .slider{
+        left: 420px;
+      }
+      
+      #history:checked ~ .list .slider{
+        left: 810px;
+      }
+      
+      .content label .title{
+        font-size: 18px;
+      }     
+      .tabs input{
+        display:none;
+      }
+
+</style>
+</head>
+<body>
+
+    <div class="container">
+    <div class="tabs">
+      <input type="radio" checked  name="slider" id="request" href ="#" onclick="load_request()">
+      <input type="radio" name="slider" id="activedrives" href="#" onclick="load_Applications()">
+      <input type="radio" name="slider" id="history" href="#" onclick="load_Results()">
+
+      <div class="list">
+        <label for="request" class="request">
+        <i class="fas fa-home"></i>
+        <span class="title">POST</span>
+      </label>
+
+      <label for="activedrives" class="activedrives">
+        <span class="icon"><i class="far fa-envelope"></i></span>
+        <span class="title">APPLICATIONS
+      </label>
+     
+      <label for="history" class="history">
+        <span class="icon"><i class="far fa-user"></i></span>
+        <span class="title">RESULTS</span>
+      </label>
+      
+      <div class="slider"></div>
+      </div>
+      <div  id="htmlload"> </div>
+    </div>
+  </div>
+
+<script>
+  function load_request() {
+     document.getElementById("htmlload").innerHTML='<object style="height:570px; margin-top:20px; margin-left:70px; width:1400px" type="text/html" data="DrivePost.html" ></object>';
+} 
+function load_Applications() {
+     document.getElementById("htmlload").innerHTML='<object style="height:570px; margin-top:20px; margin-left:70px; width:1400px" type="text/html" data="JobApplications.html" ></object>';
+} 
+function load_Results() {
+     document.getElementById("htmlload").innerHTML='<object style="height:570px; margin-top:20px; margin-left:70px; width:1400px" type="text/html" data="UpdateResults.html" ></object>';
+} 
+</script>
+</body>
+</html>

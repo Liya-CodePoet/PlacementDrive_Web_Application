@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/v4-shims.min.js" integrity="sha512-7cs6q0x+QVwp7v0xeHb8DYY9IR41u+viyQgQEpEYqOxL9OHOVNeA/nfBt9i/U+TRdS/NJnEemUgFvDa4qMhACw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/solid.min.js" integrity="sha512-Cw3lrAMFnu1XhNZB73mT27VptT/2szZ1sn2MLnPq+ATkY0qu16il+xEQdo4wDZCAVnO8QZ12547AfBZhO9M9cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/regular.min.js" integrity="sha512-JLKhm0RfxW/ni7SF0nf1G/0SLYF/y//3fZ53VTgjUkEkAGo3QtZkuDoNFQIlnyekVctAiImaKTAW4yqSP7asGw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/fontawesome.min.js" integrity="sha512-36dJpwdEm9DCm3k6J0NZCbjf8iVMEP/uytbvaiOKECYnbCaGODuR4HSj9JFPpUqY98lc2Dpn7LpyPsuadLvTyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/conflict-detection.min.js" integrity="sha512-OnJZvIhwzjyobquHi0nGMAIx0iRfbZr7eyWKsSJerRfGFiv7Ed0CytP9I52on/S0XOMKiqEBCarlOEfuyVjokw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/brands.min.js" integrity="sha512-3Zn/FU2NPNNFPn4888PtuSwAzZh7osT9728qBI3FcY33PywjzSM96QVjciohyurUKr6ketdyNYTdNvPauAnEmw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" integrity="sha512-2bMhOkE/ACz21dJT8zBOMgMecNxx0d37NND803ExktKiKdSzdwn+L7i9fdccw/3V06gM/DBWKbYmQvKMdAA9Nw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/v5-font-face.min.css" integrity="sha512-H2YXTLk5bs3DqvCfOEFsHmsjKW/qLp8SqsqVuPVwZzA5WFudPvPJisFKba2Km3sZNNBapYsZjSMTmRVcfxb5yw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/v4-shims.min.css" integrity="sha512-h2Z3EnLjRZp3KQxGYzT6SyqPrWIlmjnlJz/8q3BoZo2IN51insCNN7nmA4WHoe9eu1H5B3xLdLwKiVF8kF+Ewg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/v4-font-face.min.css" integrity="sha512-p0AmrzKP8l63xoFw9XB99oaYa40RUgDuMpdkrzFhi4HPHzO3bzyN2qP6bepe43OP3yj9+eGQEJGIGPcno1JdPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Photo Like FB DP</title>
+  <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+}
+
+h1{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 30px;
+    color: #222;
+}
+
+.pro-circle{
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid grey;
+}
+
+#myimg{
+    height: 100%;
+    width: 100%;
+}
+
+#file{
+    display: none;
+}
+
+#selbtn{
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: wheat;
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+}
+.pro-circle{
+    margin-left: -580px;
+    margin-top:-220px;
+}
+#namebox{
+    outline: none;
+    border:none;
+    color:Green;
+    margin-left:100px;
+    margin-top:50px;
+    font-weight: bold;
+}
+
+#upprogress{
+    outline: none;
+    border:none;
+    color:Green;
+    font-weight: bold;
+ }
+#upbtn{
+    outline:none;
+    border: none;
+    color: blue;
+    margin-top: 270px;
+    margin-left: -110px;
+    background-color: white;
+    font-size: 35px;
+  
+}
+#upbtn:hover{
+    color:green;
+}
+.can{
+    margin-top:-30px;
+}
+  </style>
+</head>
+<body>
+
+<div class="container">
+<div class="pro-circle">  
+    <img src="images/image.jpg" id="myimg">
+  <input type="file" id="file">
+   <label for="file" id="selbtn">choose Image</label>
+</div>
+<div class="can">
+    <input type="text" id="namebox">
+<label id="extlab"></label>
+<button id="upbtn"><i class="fa-solid fa-upload"></i></button>   
+<label id="upprogress"></label>
+</div>
+</div>
+
+
+<script type="module">
+    //declearing html elements
+const imgDiv = document.querySelector('.pro-circle');
+const img = document.querySelector('#myimg');
+const file = document.querySelector('#file');
+const selbtn = document.querySelector('#selbtn');
+//if user hover on img div 
+imgDiv.addEventListener('mouseenter', function(){
+    selbtn.style.display = "block";
+});
+//if we hover out from img div
+imgDiv.addEventListener('mouseleave', function(){
+    selbtn.style.display = "none";
+});
+//lets work for image showing functionality when we choose an image to upload
+//when we choose a foto to upload
+file.addEventListener('change', function(){
+    //this refers to file
+    const choosedFile = this.files[0];
+    if (choosedFile) {
+        const reader = new FileReader(); //FileReader is a predefined function of JS
+        reader.addEventListener('load', function(){
+            img.setAttribute('src', reader.result);
+        });
+        reader.readAsDataURL(choosedFile);
+           }
+});
+
+//------------------------IMG_UP CODES------------------------------------------------------
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
+  
+  const firebaseConfig = {
+apiKey: "AIzaSyCf8TkfipanvrO0Z_FHT9cHv5LvR9ImFfM",
+authDomain: "placementdrive-c2866.firebaseapp.com",
+databaseURL: "https://placementdrive-c2866-default-rtdb.firebaseio.com",
+projectId: "placementdrive-c2866",
+storageBucket: "placementdrive-c2866.appspot.com",
+messagingSenderId: "798924021032",
+appId: "1:798924021032:web:0fcf61762dadde9c42841d"
+};
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+  import{getStorage,ref as sRef,uploadBytesResumable,getDownloadURL} 
+  from"https://www.gstatic.com/firebasejs/9.16.0/firebase-storage.js"
+
+  //clous Realtime data base
+  import {getDatabase,ref,set,child,get,update,remove}
+  from "https://www.gstatic.com/firebasejs/9.16.0/firebase-database.js"
+  const realdb =getDatabase();
+
+  //-----------------------VARIABLE & REFERENCES------------------//
+  var files=[];
+  var reader=new FileReader();
+
+  var namebox=document.getElementById('namebox');
+  var extlab=document.getElementById('extlab');
+  var myimg=document.getElementById('myimg');
+  // var link=document.getElementById('texts');
+  var proglab=document.getElementById('upprogress');
+  var SelBtn=document.getElementById('selbtn');
+  var UpBtn=document.getElementById('upbtn');
+  // var DownBtn=document.getElementById('downbtn');
+
+  var input = document.createElement('input');
+  input.type='file';
+
+  input.onchange = e =>{
+      files=e.target.files;
+
+      var extention = GetFileExt(files[0]);
+      var name= GetFileName(files[0]);
+
+     namebox.value=name;
+    //   extlab.innerHTML=extention;
+      reader.readAsDataURL(files[0]);
+  }
+  reader.onload= function() {
+  
+      myimg.src= reader.result;
+      
+  }
+//------------------SELECTION------------------------//
+  SelBtn.onclick = function() {
+      input.click();
+      
+  }
+  function GetFileExt(file) {
+      var temp=file.name.split('.');
+      var ext=temp.slice((temp.length-1),(temp.length));
+      return '.'+ext[0];
+      
+  }
+  function GetFileName(file) {
+      var temp=file.name.split('.');
+      var fname=temp.slice(0,-1).join('.');
+      return fname;
+      
+  }
+
+//---------------------UPLOAD PROCESS--------------//
+
+  async function UploadProcess() {
+      var ImgToUpload =files[0];
+ var ImgName=namebox.value+extlab.innerHTML;
+
+    //   if(!ValidateName())
+    //   {
+    //       alert('Name Cannot Contain ".","#", "$","[",or"]"');
+    //       return;
+    //   }
+
+      const metaData={
+          contentType:ImgToUpload.type
+
+      }
+      const storage =getStorage();
+      const stroageRef =sRef(storage,"profiles/"+ImgName);
+      const UploadTask = uploadBytesResumable(stroageRef,ImgToUpload,metaData);
+      UploadTask.on('state-changed',(snapshot)=>{
+          var progess = (snapshot. bytesTransferred / snapshot.totalBytes) * 100;
+          proglab.innerHTML = "Upload "+ progess + "%";
+
+
+      },
+      (error) =>{
+          alert("error:image not uploaded!");
+
+      },
+      ()=>
+      {
+          getDownloadURL(UploadTask.snapshot.ref).then((downloadURL)=>
+          {
+              SaveURLtoRealtimDB(downloadURL);
+          });
+      }
+
+      );
+      
+      
+  }
+
+//-------------------Real time Database---------------------//
+
+function SaveURLtoRealtimDB(URL) {
+ var name=namebox.value;
+// var ext=extlab.innerHTML;
+
+set(ref(realdb,"ProfilepictureLinks/"+name),{
+ ImageName:name,
+  ImgUrl:URL
+
+});
+}
+function GetUrlfromRealtimDB() {
+  var name=namebox.value;
+  var dbref=ref(realdb);
+
+  get(child(dbref,"ProfilepictureLinks/"+name)).then((snapshot)=>
+  {
+      if (snapshot.exists()) {
+          myimg.src=snapshot.val().ImgUrl;
+          
+      }
+  })
+
+  
+}
+// function ValidateName() {
+//   var regex=/[\.#$][\]]/
+//   return !(regex.test(namebox.value));
+  
+// }
+
+
+
+  UpBtn.onclick=UploadProcess;
+//   DownBtn.onclick=GetUrlfromRealtimDB;
+
+</script>
+
+</body>
+</html>

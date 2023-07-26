@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin create drive form</title>
+    <link rel="stylesheet"href="">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/regular.min.js" integrity="sha512-H1PxHAj13z6ipNSlyM5ftUSOSvQXeH0eOsPjEpSOcjSROPLIxhKB0PLGSAbFDqEqe2vd2xPkUnEfVtBS/RNlmw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css" integrity="sha512-G/T7HQJXSeNV7mKMXeJKlYNJ0jrs8RsWzYG7rVACye+qrcUhEAYKYzaa+VFy6eFzM2+/JT1Q+eqBbZFSHmJQew==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/regular.min.css" integrity="sha512-k2UAKyvfA7Xd/6FrOv5SG4Qr9h4p2oaeshXF99WO3zIpCsgTJ3YZELDK0gHdlJE5ls+Mbd5HL50b458z3meB/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/v4-shims.min.js" integrity="sha512-wClfKJfh+9jD9QuJjurS6L5kPvT1vojiGkd2BjQ0aPL6ptsnoNNvCmNwrISYeIoaxKfOmbnI8ti3d/WjKztymQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/solid.min.js" integrity="sha512-F0Gp9qi8/3qyo+62Pi1ZgGe6hAUxPbzOnqhhpJYAMUGDmOys95dCRCVYfQawlUeoGp1Rj/K9V7NboA9sQ9BtKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+       <style>
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+}
+.pro-circle{
+    height: 180px;
+    width: 180px;
+    position: absolute;
+    top: 22%;
+    left: 22%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    overflow: hidden;
+   
+    border: 1px solid grey;
+    
+}
+.pro-circle:hover{
+    box-shadow: 0 0 10px #1e8f71;
+}
+#myimg{
+    height: 100%;
+    width: 100%;
+}
+.leftlabel {
+   margin-left: 70px;
+    margin-top: 240px;
+   
+    
+}
+
+#ContactNolab,#MailIDlab,#DOBlab,#snlab{
+    padding-top: 10px;
+    font-size: 17px;
+    color: rgb(167, 162, 162);
+    margin-left: 15px;
+} 
+#ContactNo,#MailID,#DOB,#sn{
+    padding: 0px; 
+     margin-left:20px;
+    margin-top: -10px; 
+    font-size: 20px;
+    color: rgb(248, 244, 244);
+    text-align: center;
+    font-weight:600;
+}
+.leftside{
+    margin-top: 20px;
+    height: 600px;
+    width: 40%;
+    padding: 15px;
+    background-color: rgba(3, 1, 1, 0.888);
+     margin-left: -100px;
+   border-radius: 8px;
+}
+.leftside:hover{
+    background-color: rgba(39, 37, 37, 0.97);
+}
+.container{
+    display: flex;
+  
+}
+ .rightside{
+    margin-top: 20px;
+    width: 60%;
+    margin-left: 50px;
+    padding-left: 10px;
+} 
+ #RegNo,#Year,#dept,#Campus{
+    font-size: 18px;
+    margin-top:0px;
+    margin-left: 10px;
+
+} 
+
+ /* i{
+    font-size: 34px;
+    margin-top: 10px;
+    color: rgb(31, 130, 109);
+}  */
+
+ .bar i{
+        /* color: rgb(7, 125, 101); */
+        color:#1e8f71;
+        font-size: 42px;
+        margin-right: 5px;
+        margin-top: 12px;     
+      } 
+.bar label{
+   display: flex;
+   padding: 3px;
+   font-size: 140%;
+ }
+      .bar{
+        background-color: rgba(3, 1, 1, 0.888);
+        width: 850px;
+       border-radius:8px;
+       padding:5px 30px;
+      display: flex;
+      margin-left: -50px;
+      }
+      #RegNo,#Year,#dept,#Campus{
+        font-size: 16px;
+        font-weight: 600;
+        color:rgb(188, 178, 178);
+       }
+      #RegNolab,#Yearlab,#deptlab,#Campuslab{
+        color:rgb(230, 224, 224);
+        margin-bottom: -10px;
+        font-weight: 500;
+        padding-bottom: -10px;
+      }
+     .baritems{
+        padding-left: 5px;
+        padding-right: 50px;
+        margin: 0;   
+     } 
+     .baritems:hover{
+        border-radius: 10px;
+        background-color: rgba(121, 117, 117, 0.233);
+     }
+    /* -------------------------------ACADEMIC DETAILS----------------------------------------- */
+     .academic{
+        border-radius: 8px;
+        margin-left: -50px;
+        margin-top: 8px;
+        width:53rem;
+        height:32rem;
+        padding: 10px;
+        background-color: rgba(3, 1, 1, 0.888);
+     }
+   .academic label{
+        font-size: 19px;
+        font-weight: 480;
+     }
+     .academic .sslchsc{
+        display: flex; 
+      
+     }
+     .academic .sslc:hover{
+        background-color: rgba(121, 117, 117, 0.233);
+       border-radius: 7px;
+    }
+    .academic .hsc:hover{
+        background-color: rgba(121, 117, 117, 0.233);
+       border-radius: 7px;
+    }
+    .academic .ug:hover{
+        background-color: rgba(121, 117, 117, 0.233);
+       border-radius: 7px;
+    }
+    .academic .pg:hover{
+        background-color: rgba(121, 117, 117, 0.233);
+       border-radius: 7px;
+    }
+
+     .academic .ugpg{
+        display: flex; 
+        margin-top: 20px;
+     }
+     .ug:hover,.pg:hover,.sslc:hover,.hsc:hover{
+         border-radius: 8px;
+     }
+     .ug,.pg{
+        width:50%;
+     }
+     .sslc,.hsc{
+        width:50%;
+        
+     }
+     
+    #tenins,#tencgpa,#twelveins,#twelvecgpa,#ugdeg,#ugins,#ugcgpa,#pgdeg,#pgins,#pgcgpa{
+        font-size: 18px;
+        margin-top: -10px;
+        font-weight: 600;
+        margin-left: 20px;
+        color: white;
+    }
+     .sslc label{
+        margin-left: 10px;
+        display: flex;
+        
+     }
+     .ug label{
+        margin-left: 10px;
+        display: flex;
+     }
+     .pg label{
+        margin-left: 10px;
+        display: flex;
+     }
+     .hsc label{
+        margin-left: 10px;
+        display: flex;
+     }
+     .hsc label{
+        display: flex;
+     }
+     .pg label{
+        display: flex;
+     }
+     h4{
+        padding:8px;
+        text-align: center;
+        color:#1e8f71;
+        text-shadow: 0 0 3px #1e8f71;
+     }
+     h4:hover{
+        text-shadow: 0 0 8px #7b988a;
+     }
+     #head{
+        font-weight: 500;
+        text-shadow: 0 0 12px #03d6a1;
+        color: white;
+     }
+    #lab{
+        font-weight:500;
+    font-size: 15px;
+    color: rgba(179, 175, 175, 0.886);
+    } 
+#ug,#pg{
+    width: 50%;
+}
+body{
+    background-color: rgb(76, 74, 74);
+}
+.vl{
+    
+  border-left:1px solid #1e8f713a;
+  height: 400px;
+  position: absolute;
+  left: 63.4%;
+  margin-left: 16px;
+  top: 30%;
+}
+/* hr{
+    border: 1px solid #1e8f7118;
+    width:800px;
+    position: absolute;
+    top:50%;
+} */
+    </style>
+</head>
+<body>
+    <div class="back">
+   <div class="container">
+    
+    <div class="leftside">
+       
+        <div class="pro-circle">  
+            <img src="images/dp.jpg" id="myimg">
+          <input type="file" id="file">
+           <label for="file" id="selbtn">choose Image</label>
+        </div>
+     
+        <div class="leftlabel">
+        <label id="snlab"> Name </label><br>
+        <label id="sn"></label><br>
+        <label id="DOBlab">DOB   </label><br>
+        <label id="DOB"></label><br>
+        <label id="MailIDlab">Email ID   </label><br>
+        <label id="MailID"></label><br>
+        <label id="ContactNolab">Mobile Number</label><br>
+        <label id="ContactNo"></label><br>
+    </div>
+    </div>
+    <div class="rightside">
+        
+            <div class="bar">  
+                <i class="fa-solid fa-building-columns"></i>     
+               <div class="baritems">
+                <label id="Campuslab">Campus</label>
+                <label id="Campus"></label>
+            </div>
+            <i class="fa-solid fa-user-graduate"></i>  
+              <div class="baritems">
+                <label id="deptlab">Department</label>
+                <label id="dept"></label>
+            </div>
+            <i class="fa-solid fa-id-badge"></i>
+               <div class="baritems">
+                <label id="Yearlab">Year</label>
+                <label id="Year"></label>
+            </div>
+            <i class="fa-solid fa-registered"></i>
+        <div class="baritems">
+            <label id="RegNolab">Register No </label>
+                <label id="RegNo"> </label>
+            </div>
+                </div>
+                <div class="academic">
+                    <div class="vl"></div>
+                    
+                    <h4>ACADEMIC DETAILS</h4><br>
+                    <div class="sslchsc">
+                        <div class="sslc">
+                    <label id="head">SSLC</label>
+                    <label id="lab">Institute</label>
+                    <label id="tenins"></label>
+                    <label id="lab">CGPA</label>
+                    <label id="tencgpa"></label>
+                </div>
+                    <div class="hsc">
+                    <label id="head">HSC</label>
+                    <label id="lab">Institute</label>
+                    <label id="twelveins"></label>
+                    <label id="lab">CGPA</label>
+                    <label id="twelvecgpa"></label>
+                </div>
+                <hr >
+                </div>
+                <div class="ugpg">
+                <div class="ug">
+                    <label id="head">UG</label>
+                    <label id="lab">Degree</label>
+                    <label id="ugdeg"></label>
+                    <label id="lab">Institute</label>
+                    <label id="ugins"></label>
+                    <label id="lab">CGPA</label>
+                    <label id="ugcgpa"></label>
+                </div>
+                <div class="pg">
+                    <label id="head">PG</label>
+                    <label id="lab">Degree</label>
+                    <label id="pgdeg"></label>
+                    <label id="lab">Institute</label>
+                    <label id="pgins"></label>
+                    <label id="lab">CGPA</label>
+                    <label id="pgcgpa"></label>
+                </div>
+            </div>
+                   
+                </div>
+    
+    </div>
+   </div>
+</div>
+    <script type="module">
+           
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.0/firebase-app.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyCf8TkfipanvrO0Z_FHT9cHv5LvR9ImFfM",
+authDomain: "placementdrive-c2866.firebaseapp.com",
+databaseURL: "https://placementdrive-c2866-default-rtdb.firebaseio.com",
+projectId: "placementdrive-c2866",
+storageBucket: "placementdrive-c2866.appspot.com",
+messagingSenderId: "798924021032",
+appId: "1:798924021032:web:0fcf61762dadde9c42841d"
+};
+
+const app = initializeApp(firebaseConfig);
+import{getStorage,ref as sRef,uploadBytesResumable,getDownloadURL} 
+        from"https://www.gstatic.com/firebasejs/9.17.0/firebase-storage.js"
+
+import{getDatabase,ref,child,onValue,get}
+from "https://www.gstatic.com/firebasejs/9.17.0/firebase-database.js"
+
+const db=getDatabase();
+ 
+
+//  const createbtn=document.getElementById('ViewProfile');
+      
+
+
+//-------------------------------------REQUEST DRIVE DETAILS-------------------------------------------------------------
+        let Post=null;
+
+        window.onload=function(){
+            Post=localStorage.Post;
+            if(Post){
+                Post=JSON.parse(Post);
+                LoadPost();
+                GetUrlfromRealtimDB();
+            }
+        }
+        function LoadPost(){
+            document.getElementById('Campus').innerHTML= "RGCET";
+            document.getElementById('dept').innerHTML= Post.Department;
+            document.getElementById('Year').innerHTML=Post.Year;
+            document.getElementById('RegNo').innerHTML= Post.RegisterNumber;
+            document.getElementById('sn').innerHTML= Post.CandidateName;
+           
+             document.getElementById('DOB').innerHTML= Post.DOB;
+             document.getElementById('MailID').innerHTML= Post.MailID;
+             document.getElementById('ContactNo').innerHTML= Post.ContactNo;
+             document.getElementById('tencgpa').innerHTML= Post.tencgpa;
+            document.getElementById('tenins').innerHTML= Post.tenins;
+            document.getElementById('twelvecgpa').innerHTML= Post.twelvecgpa;
+            document.getElementById('twelveins').innerHTML= Post.twelveins;
+            document.getElementById('ugcgpa').innerHTML= Post.ugcgpa;
+            document.getElementById('ugins').innerHTML= Post.ugins;
+            document.getElementById('ugdeg').innerHTML= Post.ugdeg;
+            document.getElementById('pgcgpa').innerHTML= Post.pgcgpa;
+            document.getElementById('pgins').innerHTML= Post.pgins;
+            document.getElementById('pgdeg').innerHTML= Post.pgdeg;
+
+         }
+//-------------------------SHOW RESUME--------------------------------------------------------
+const dbRef = ref(db);
+var reader=new FileReader();
+        // var sno=0;
+        // var tbody=document.getElementById('tbody1');
+        var myimg=document.getElementById('myimg');
+        var DownBtn=document.getElementById('downbtn');
+        // var namebox=document.getElementById('namebox');
+
+        var input = document.createElement('input');
+        input.type='file';
+
+        input.onchange = e =>{
+            files=e.target.files;
+
+            var extention = GetFileExt(files[0]);
+            var name= GetFileName(files[0]);
+
+            // namebox.value=(name+extension);
+            extlab.innerHTML=extention;
+            reader.readAsDataURL(files[0]);
+        }
+        reader.onload= function() {
+        
+            myimg.src= reader.result;
+            
+        }
+       function GetUrlfromRealtimDB() {
+        
+        var dbref=ref(db);
+
+        get(child(dbref,"StudentProfileLinks/"+Post.ImageName)).then((snapshot)=>
+        {
+            if (snapshot.exists()) {
+                myimg.src=snapshot.val().ImgUrl;
+                
+            }
+        })
+    }
+    // DownBtn.onclick=GetUrlfromRealtimDB;
+   
+
+         //---------------RADIO BUTTON SHOW AND HIDE CONTENTS ----------------------------------------------
+
+
+    //      $(document).ready(function(){
+	// 	/* by default hide all radio_content div elements except first element */
+	// 	$(".content .radio_content").hide();
+	// 	$(".content .radio_content:first-child").show();
+
+	// 	/* when any radio element is clicked, Get the attribute value of that clicked radio element and show the radio_content div element which matches the attribute value and hide the remaining tab content div elements */
+	// 	$(".radio_wrap").click(function(){
+	// 	  var current_raido = $(this).attr("data-radio");
+	// 	  $(".content .radio_content").hide();
+	// 	  $("."+current_raido).show();
+	// 	})
+	// });
+/* ------------------------------------------------------------------------------------------------------------ */
+
+        //  function ViewProfile(){
+        //  window.open('JobApplicationForm.html');
+        //   }
+
+  </script>
+</body>
+</html>
