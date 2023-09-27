@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin create drive form</title>
+    <link rel="stylesheet"href="">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/regular.min.js" integrity="sha512-H1PxHAj13z6ipNSlyM5ftUSOSvQXeH0eOsPjEpSOcjSROPLIxhKB0PLGSAbFDqEqe2vd2xPkUnEfVtBS/RNlmw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css" integrity="sha512-G/T7HQJXSeNV7mKMXeJKlYNJ0jrs8RsWzYG7rVACye+qrcUhEAYKYzaa+VFy6eFzM2+/JT1Q+eqBbZFSHmJQew==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/regular.min.css" integrity="sha512-k2UAKyvfA7Xd/6FrOv5SG4Qr9h4p2oaeshXF99WO3zIpCsgTJ3YZELDK0gHdlJE5ls+Mbd5HL50b458z3meB/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/v4-shims.min.js" integrity="sha512-wClfKJfh+9jD9QuJjurS6L5kPvT1vojiGkd2BjQ0aPL6ptsnoNNvCmNwrISYeIoaxKfOmbnI8ti3d/WjKztymQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/solid.min.js" integrity="sha512-F0Gp9qi8/3qyo+62Pi1ZgGe6hAUxPbzOnqhhpJYAMUGDmOys95dCRCVYfQawlUeoGp1Rj/K9V7NboA9sQ9BtKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+    
+    
+    
+    <style>
+        body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    margin-left: -600px;}
+
+        /* STYLES FOR RADIO BTN SHOW AND HIDE--START */
+#r1n,#r2n,#r3n{
+    color:white;
+   background-color: rgba(87, 96, 96, 0.68);
+    font-size: 25px;
+    font-weight: 500;
+   padding: 8px 25px;
+   margin-top: 10px;
+  border-radius: 5px;
+  
+}
+#r1d,#r2d,#r3d,#r1t,#r2t,#r3t,#r1v,#v2,#v3,#v1{
+    color:black;
+    margin-left: 15px;
+}       
+.that3{
+    display: flex;
+    padding: 30px;
+    margin:50px;
+    font-size: 18px;
+    
+}
+.that3 label{
+    margin-top: -10px;
+    margin-left:40px;
+    font-size: 19px;
+    font-weight: bold;
+}
+.that3 i{
+    margin-left: -60px;
+    padding: 0px 80px;
+    font-size: 50px;
+    color:rgb(174, 89, 10);
+    
+}
+
+.that2{
+    display: flex;
+    padding: 30px;
+    margin:50px;
+    font-size: 18px;
+    
+}
+.that2 label{
+    margin-top: -10px;
+    margin-left:40px;
+    font-size: 19px;
+    font-weight: bold;
+}
+.that2 i{
+    margin-left: -60px;
+    padding: 0px 80px;
+    font-size: 50px;
+    color:rgba(9, 20, 245, 0.984);
+}
+
+
+.that1{
+    display: flex;
+    padding: 30px;
+    margin:50px;
+    font-size: 18px;
+    
+}
+.that1 label{
+    margin-top: -10px;
+    margin-left:40px;
+    font-size: 19px;
+    font-weight: bold;
+}
+.that1 i{
+    margin-left: -60px;
+    padding: 0px 80px;
+    font-size: 50px;
+    color:rgb(101, 39, 247);
+}
+.date {
+    display: flex;
+
+       flex-direction: column;
+}
+.time {
+    display: flex;
+    flex-direction: column;
+}
+.venue {
+    display: flex;
+    flex-direction: column;
+}
+p{
+    padding:5px;
+    margin-left: 15px;
+    color:grey;
+}
+
+        
+.wrapper{
+	width: 902px;
+	height: 505px;
+   	background: rgb(1, 158, 158);
+	margin: 30px auto;
+    margin-left: 300px;
+	padding:15px 15px;
+	border-radius: 5px;
+}
+
+.wrapper .radio_tabs{
+	height: 60px;
+	background: #fff;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	font-size: 20px;
+    padding: 18px;
+    display: flex;
+    box-shadow: 0 0 2px rgba(0,0,0,0.1);
+}
+
+.wrapper .radio_tabs label{
+	margin-right: 15px;
+	display: block;
+	position: relative;
+	cursor: pointer;
+	padding-left: 28px;
+    font-weight: bold;
+}
+
+.wrapper .radio_tabs .radio_mark:before{
+	content: "";
+	position: absolute;
+	top: 2px;
+	left: 0;
+	background: url("radio_icon.png") no-repeat 0 0;
+	width: 22px;
+	height: 22px;
+    
+}
+
+.wrapper .radio_tabs label .input{
+	position: absolute;
+	top: 0;
+	right: 0;
+	opacity: 0;
+    
+}
+
+.wrapper .radio_tabs label .input:checked ~ .radio_mark{
+	color: black;
+    text-shadow: 0 0 5px teal;
+    
+}
+
+.wrapper .radio_tabs label .input:checked ~ .radio_mark:before{
+	background-position: 0 -23px;
+	width: 22px;
+	height: 22px;
+    
+}
+
+.wrapper .content{
+	width: 100%;
+	height: 400px;
+	background: #fff;
+	border-radius: 5px;
+	padding: 18px;
+	box-shadow: 0 0 2px rgba(0,0,0,0.1);
+}
+
+
+         /* STYLES FOR RADIO BTN SHOW AND HIDE--END */
+
+       
+        #contentsDiv{
+           
+            display: flex;
+            flex-direction: column;
+            margin: 50px;
+            height: 120vh;
+            padding: 50px;
+            width: 130vh;
+            margin-left: 80px;
+             /* box-shadow: 0px 5px 10px rgba(20, 20, 20, 0.756);   */
+            background-color:white;
+          
+        }
+        #cn{
+           margin-top: -80px;
+           margin-left: 600px;
+            text-align: center;
+            font-size: 50px;
+            font-weight: 500;
+           color:black;
+           text-shadow: 0 0 5px teal;
+           text-transform: uppercase;
+            
+        }
+        #cn:hover{
+            color:teal;
+            text-shadow: 0px 1px 5px rgba(6, 7, 7, 0.756);
+       
+        }
+     
+    .bar i{
+        color: teal;
+        font-size: 30px;
+        text-shadow: 0 0 2px black;
+    } 
+     
+
+      .bar{
+       font-size: 130%;
+       font-weight: 500;
+      margin-left: 300px;
+      margin-top: -10px;
+      margin-bottom: -20px;
+        width: 900px;
+       border-radius:5px;
+       padding:0 25px;
+       box-shadow: 0px 0px 10px rgba(15, 95, 84, 0.756);
+      }
+       
+       #so,#pack,#jr,#loc{
+        padding:20px;
+       }
+
+       #applynow{
+        background-color: black;
+        margin-top:-10px;
+        color:rgb(245, 245, 251);
+        font-size: 20px;
+        font-weight: 500;
+        border-radius: 5px;
+        margin-left: 1000px;
+        width:200px;
+        padding: 10px;
+        border: none;
+        outline: none;
+       }
+       #Vcp{
+        background-color: black;
+        color:rgb(245, 245, 251);
+        font-size: 20px;
+        font-weight: 500;
+        border-radius: 5px;
+        width:150px;
+        padding: 10px;
+        border: none;
+        outline: none;
+        margin-top: -48px;
+        margin-left: 850px;
+       }
+       #applynow:hover,#Vcp:hover{
+        background-color: teal;
+        box-shadow: 0px 5px 10px rgba(20, 20, 20, 0.756);
+     }
+   #mes,#e{
+    font-size: 115%;
+    font-weight: 500;
+   }
+ #e{
+    color: #0b07f0;
+    font-weight: bold;
+ }
+ #DriveId{
+    margin-left: 310px;
+    font-size: 18px;
+font-weight: 500;
+margin-top: -10px;
+margin-bottom: 10px;
+ }
+ .that1,.that2,.that3{
+    margin-left: 180px;
+ }
+    </style>
+</head>
+<body> 
+    <div class="container">
+         <div id="contentsDiv">
+            <label id="cn"></label>
+            <label id="DriveId"></label>
+            <div class="bar">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            <label id="so"></label>
+            <i class="fa-solid fa-briefcase"></i>
+            <label id="jr"></label>
+            <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>
+            <label id="pack"></label>
+            <i class="fa-sharp fa-solid fa-location-dot"></i>
+            <label id="loc"> </label>
+            </div>
+
+<!-- ------------------------------------VARANUM--------------------------------------------------------- -->
+            
+<div class="wrapper">
+	<div class="radio_tabs">
+		<label class="radio_wrap" data-radio="radio_1">
+			<input type="radio" name="sports" class="input" checked>
+			<span class="radio_mark">
+				Instructions
+			</span>
+		</label>
+		<label class="radio_wrap" data-radio="radio_2">
+			<input type="radio" name="sports" class="input">
+			<span class="radio_mark">
+				R1
+			</span>
+		</label>
+		<label class="radio_wrap" data-radio="radio_3">
+			<input type="radio" name="sports" class="input">
+			<span class="radio_mark">
+			R2
+			</span>
+		</label>
+		<label class="radio_wrap" data-radio="radio_4">
+			<input type="radio" name="sports" class="input">
+			<span class="radio_mark">
+				R3
+			</span>
+		</label>
+	</div>
+    <!-- ------------------------------------------VARANUM------------------------------------------------------------ -->
+
+            <div class="content">
+                <div class="radio_content radio_1">
+                                    
+                    <label id="mes"></label>
+                    <label id="e"></label>
+                    <!-- instruction show pananum -->	
+                </div>
+                <div class="radio_content radio_2">
+                    <label id="r1n"></label><br>
+                        
+                    <div class="that1">
+
+                    <div class="date">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <p>Date</p>
+                  
+                    <label id="r1d"></label>
+                     </div>
+                    <div class="time">    
+                   <i class="fa-solid fa-clock"></i><p>Time</p>
+                   <label id="r1t"></label>
+                     </div>
+
+                     <div class="venue">
+                     <i class="fa-solid fa-house"></i><p>Venue</p>
+                     <label id="v1"></label>
+                    </div>
+                </div><!-- that3 -->
+                     
+                    <!-- round 1 -->	
+                </div>
+
+                <div class="radio_content radio_3">
+                    <label id="r2n"></label><br>
+
+                    <div class="that2">
+
+                    <div class="date">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <p>Date</p>
+                    <label id="r2d"></label>
+                     </div>
+                    <div class="time">    
+                   <i class="fa-solid fa-clock"></i><p>Time</p>
+                   <label id="r2t"></label>
+                     </div>
+
+                     <div class="venue">
+                     <i class="fa-solid fa-house"></i><p>Venue</p>
+                     <label id="v2"></label>
+                    </div>
+                </div>
+                    <!-- round 2 -->	
+                </div>
+                <div class="radio_content radio_4">
+                    <label id="r3n"></label><br>
+                    <div class="that3">
+
+                        <div class="date">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <p>Date</p>
+                      
+                        <label id="r3d"></label>
+                         </div>
+                        <div class="time">    
+                       <i class="fa-solid fa-clock"></i><p>Time</p>
+                       <label id="r3t"></label>
+                         </div>
+    
+                         <div class="venue">
+                         <i class="fa-solid fa-house"></i><p>Venue</p>
+                         <label id="v3"></label>
+                        </div>
+                    </div>
+
+                   
+                    <!-- round 3 -->	
+                </div>
+            </div>
+        </div>
+             <button  id="applynow" class="apply"></button> 
+             <!-- <button  id="Vcp" class="view Profile"></button>  -->
+            <!-- <label id="JD"></label> -->
+
+        </div>
+            </div>
+    
+    
+    <script type="module">
+ 
+
+ const createbtn=document.getElementById('applynow');
+      
+ const Viewprofile=document.getElementById('cn');
+
+//-------------------------------------REQUEST DRIVE DETAILS-------------------------------------------------------------
+        let Post=null;
+
+        window.onload=function(){
+            Post=localStorage.Post;
+            if(Post){
+                Post=JSON.parse(Post);
+                LoadPost();
+            }
+        }
+        function LoadPost(){
+           
+            document.getElementById('cn').innerHTML= Post.CompanyName;
+            document.getElementById('DriveId').innerHTML= "Drive ID : ";
+            document.getElementById('DriveId').innerHTML+=" " +Post.DriveId;
+            document.getElementById('jr').innerHTML= Post.Jobrole;
+            document.getElementById('so').innerHTML= " Starts On ";
+           
+            document.getElementById('so').innerHTML+= Post.StartsOn;
+
+            
+            document.getElementById('v1').innerHTML+= Post.Venue;
+          
+            document.getElementById('v2').innerHTML+= Post.Venue;
+          
+            document.getElementById('v3').innerHTML+= Post.Venue;
+           
+
+          
+
+           
+            document.getElementById('loc').innerHTML+= Post.Location;
+            document.getElementById('pack').innerHTML+= Post.Package;
+            document.getElementById('pack').innerHTML+=" LPA";
+            document.getElementById('e').innerHTML= "Eligibility : ";
+            document.getElementById('e').innerHTML+= Post.Eligibility;
+            
+            document.getElementById('mes').innerHTML+="<br> ";
+            document.getElementById('mes').innerHTML+=Post.Message;
+
+
+           
+            document.getElementById('r1t').innerHTML+= Post.r1t;
+            document.getElementById('r1t').innerHTML+= " AM ";
+           
+            document.getElementById('r1d').innerHTML+= Post.r1d;
+
+            document.getElementById('r1n').innerHTML= Post.r1n;
+
+
+            
+            document.getElementById('r2t').innerHTML+= Post.r2t;
+            document.getElementById('r2t').innerHTML+= " AM ";
+            
+            document.getElementById('r2d').innerHTML+= Post.r2d;
+
+            document.getElementById('r2n').innerHTML= Post.r2n;
+
+
+            
+            document.getElementById('r3t').innerHTML+= Post.r3t;
+            document.getElementById('r3t').innerHTML+= " AM ";
+            
+            document.getElementById('r3d').innerHTML+= Post.r3d;
+            
+            document.getElementById('r3n').innerHTML= Post.r3n;
+
+
+            document.getElementById('applynow').innerHTML="View Applications";
+            document.getElementById('Vcp').innerHTML="View Profile";
+         }
+
+
+         //---------------RADIO BUTTON SHOW AND HIDE CONTENTS ----------------------------------------------
+
+
+         $(document).ready(function(){
+		/* by default hide all radio_content div elements except first element */
+		$(".content .radio_content").hide();
+		$(".content .radio_content:first-child").show();
+
+		/* when any radio element is clicked, Get the attribute value of that clicked radio element and show the radio_content div element which matches the attribute value and hide the remaining tab content div elements */
+		$(".radio_wrap").click(function(){
+		  var current_raido = $(this).attr("data-radio");
+		  $(".content .radio_content").hide();
+		  $("."+current_raido).show();
+		})
+	});
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+         function ApplyNow(){
+        
+         window.location="JobApplications.html";
+          }
+          function cn(){
+    
+         window.location="CompanyProfileList.html";
+          }
+
+         //----------------------------ASSIGNING EVENTS TO BTN CREATE DRIVE -------------------------------------
+        
+         createbtn.addEventListener('click',ApplyNow);
+          Viewprofile.addEventListener('click',cn)
+
+  </script>
+</body>

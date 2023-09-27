@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Home Page</title>
+    <link rel="stylesheet"href="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <style>
+      body{
+        height: 100vh;
+       
+        font-family: 'Poppins', sans-serif;
+        /* background-color: rgba(0, 0, 0, 0.861); */
+        background: linear-gradient(rgba(10,0.6,0,0.7),rgba(0.5,0.5,0,0.7)),url("images/pexels-markus-spiske-114294.jpg") no-repeat center;
+    
+        
+      }
+      /* #signoutlink,#userlink{
+        text-transform: uppercase;
+        font-size: 18px;
+        color: white;
+      }
+      #signoutlink:hover,#userlink:hover{
+        color:teal;
+       
+      } */
+     
+      .container{
+        max-width: 97%;
+        width: 100%;
+        /* height: 650px; */
+        height: 100%;
+        padding: 40px 50px  40px  40px;
+        /* background: #fff; */
+        /* background: linear-gradient(rgba(10, 1, 0, 0.594),rgba(1, 1, 0, 0.315)),url("images/thought-catalog-505eectW54k-unsplash.jpg") no-repeat center;
+            margin-left: 20px; */
+        border-radius: 8px;
+        /* box-shadow: 0 5px 10px rgba(15, 8, 8, 0.2); */
+      }
+       
+      .content{
+        display: flex;
+        /* align-items: center; */
+        /* justify-content: space-between; */
+      }
+      .content .list{
+        display:flex;
+        flex-direction: column;
+        width: 20%;
+        margin-right: 50px;
+        position: relative;
+      }
+      .content .list label{
+        height: 60px;
+        font-size: 22px;
+        /* font-weight: 450; */
+        line-height: 60px;
+        cursor: pointer;
+        padding-left: 25px;
+        transition: all 0.5s ease;
+        color: #333;
+        z-index: 12;
+      }
+      #profile:checked ~ .list label.profile,
+      
+      #drives:checked ~ .list label.drives,
+      #userlink:checked ~ .list label.userlink,
+      #Results:checked ~ .list label.Results,
+      #addprofile:checked ~ .list label.addprofile
+      {
+        color: teal;
+      }
+      .content .list label:hover{
+        color: teal;
+      }
+      .content .slider{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 60px;
+        width: 90%;
+        border-radius: 2px;
+        background: #d4d3d4;
+        transition: all 0.4s ease;
+      }
+      #profile:checked ~ .list .slider{
+        top: 0;
+      }
+     
+      #drives:checked ~ .list .slider{
+        top: 70px;
+      }
+      
+      #Results:checked ~ .list .slider{
+        top: 135px;
+      }
+      #addprofile:checked ~ .list .slider{
+        top: 207px;
+      }
+      
+      
+      /* .content label .title{
+        font-size: 18px;
+      }      */
+      #profile:checked ~ .text-content .profile,
+      
+      #drives:checked ~ .text-content .drives,
+     #userlink:checked ~ .text-content .userlink,
+      #Results:checked ~ .text-content .Results,
+      #addprofile:checked ~ .text-content .addprofile
+      {
+        display:block;
+      }
+      
+      #drives:checked ~ .text-content .profile,
+     
+      #Results:checked ~ .text-content .profile,
+      #addprofile:checked ~ .text-content .profile{
+        display: none;
+      }
+      .content input{
+        display: none;
+      }
+      .navbar-nav li{
+       
+        font-size: 18px;
+         font-weight: bold; 
+        color:white;
+       justify-content: center;
+      }
+      
+      ul{
+        display: flex;
+        margin-top: 10px;
+      }
+      /* .collapse{
+        background-color: rgb(218, 85, 85);
+      } */
+      .navbar-collapse{
+        background-color: rgba(39, 34, 34, 0.826);
+        border-radius: 5px;
+        margin-left: -20px;
+      }
+      .profile .drives .Results{
+        margin-top: 0px;
+      }
+      .leftright{
+        display: flex;
+        
+      }
+      .left li label{
+        padding:15px 20px;
+      }
+
+      .left li label:hover{
+        color: teal;
+      }
+      /* .right{
+         margin-left:810px; 
+       margin-right: 10px;
+
+      }
+    */
+      /* dropdown for profile option */
+      .dropbtn {
+  
+  color: rgb(254, 251, 251);
+  padding: 16px;
+  font-size: 18px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 15px;
+  
+}
+.dropdown:hover{
+  color: teal;
+}
+.dropdown-content {
+  display: none;
+    position:absolute;
+  background-color: #332f2f;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  
+} 
+
+.dropdown-content li a{
+   /* color: rgb(65, 10, 232);  */
+  padding: 15px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight:bold;
+  font-size: 16px;
+  color:white;
+}
+.dropdown-content li a:hover{
+ color: teal;
+}
+.dropdown:hover .dropdown-content {display: block;}
+
+/* HOME CONTENT */
+.home{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  position: absolute;
+  text-align: center;
+  margin-left: 20%;
+  margin-top: 5%;
+  z-index:-1;
+ 
+}
+
+.text-1{
+  font-size: 55px;
+  color: white;
+  text-shadow: 1px 1px 5px white; 
+
+}
+.text-2{
+  font-size: 50px;
+  font-weight: bold;
+  
+  color:teal;
+  text-shadow: 1px 1px 15px white; 
+}
+.text-3{
+  font-size: 25px;
+  color:white;
+  text-shadow: 1px 1px 5px white; 
+ 
+}
+.icon{
+  text-shadow: 0px 2px 13px white; 
+  font-size: 75px;
+  font-weight: bold;
+  color:teal;
+  /* color:#ac4060; */
+  /* color:#2e57fc; */
+  /* color:blue; */
+}
+#userlink{
+  margin-right: 0;
+  margin-left: 700px;
+  padding:10 15px;
+}
+.nav-item1{
+  padding:0 10px;
+}
+    </style>
+ </head>
+
+ <body>
+  <nav class="navbar navbar-expand-lg" style="border: 2px solid rgb(11, 9, 9); background-color: rgb(2, 2, 3);"> 
+    <a class="navbar-brand" href="#"></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <div class="leftright">
+      <div class="left">
+      <ul type="none" class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <label for="profile" class="profile">POSTS</label>
+        </li>
+        <li class="nav-item">
+          <label for="drives" class="drives"> APPLICATIONS</label>
+        </li>
+        <li class="nav-item">
+          <label for="Results" class="Results">RESULTS
+           
+          </label>
+        </li>
+        
+        
+       
+        <li class="dropdown">
+          <a class="dropbtn" onclick="companyprofile()">PROFILE</a>
+           <ul type="none" class="dropdown-content">
+            <li><a onclick="load_AddProfile()">ADD</a></li>
+              <!-- <li><a onclick="load_viewprofile()">VIEW</a></li> -->
+              
+            </ul> 
+      </li>
+
+      
+      
+  
+        
+      </ul> 
+    </div>
+<!-- ------------------------------------------------------------------------------------------------------------------ -->
+          <div class="right">
+<form class="form-inline my-2 my-lg-1">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item1">
+                    <a id="userlink" style="color:white; "   class="nav-link">Username</a>
+                  </li>
+                  <li class="nav-item1">
+                    <a  id="signoutlink" style="color:white;"  class="nav-link" href="">SignOut</a>
+                  </li>
+                </ul>
+          </form>
+        </div>
+      </div>
+        </div>
+      </nav>
+<h3 id="hh"></h3>
+
+<div class="container">
+  <div class="content">
+    <input type="radio" checked  name="slider" id="profile" href ="#" onclick="DrivePost()">
+    <input type="radio" name="slider" id="drives" href="#" onclick="load_activedrives()">
+    <input type="radio" name="slider" id="Results" href="#" onclick="load_Results()">
+    
+   
+    <section class="home" id="home">
+      <div class="max-width">
+          <div class="home-content">
+              <div class="text-1">Welcome to </div>
+              <div class="text-2">COMPANY DASHBOARD...</div>
+              <div class="text-3">We Look Forward to Serving You the Best Students to Achieve Your Company Goals!</div>
+        
+              <div class="icon"><i class="fa-solid fa-city"></i><span></span></div>
+                </div>
+      </div>
+  </section>
+   
+    <div  id="htmlload"> </div>
+  </div>
+</div>
+
+<script>
+  /* ----------------LOAD EXTERNAL HTML FILES------------------------------------- */
+
+  //companyprofile
+  function companyprofile() {
+     document.getElementById("htmlload").innerHTML='<object style="width:95rem; margin-left:-60px; margin-top:-50px; height:100vh; " type="text/html" data="CompanyProfileList.html" ></object>';
+} 
+//PROFILE LOAD
+function DrivePost() {
+     document.getElementById("htmlload").innerHTML='<object style="width:95rem; margin-left:-60px; margin-top:-50px; height:100vh; " type="text/html" data="DrivePost.html" ></object>';
+} 
+//ADD PROFILE POPUP PAGE VARANUM
+function load_AddProfile() {
+     document.getElementById("htmlload").innerHTML='<object style="width:95rem; margin-left:-60px; margin-top:-50px; height:100vh; "  type="text/html" data="CompanyProfileUpdate.html" ></object>';
+} 
+//view profile
+function load_viewprofile() {
+     document.getElementById("htmlload").innerHTML='<object style="width:95rem; margin-left:-60px; margin-top:-50px; height:100vh; " type="text/html" data="StudentsProfileDetails.html" ></object>';
+} 
+//DRIVES LOAD
+function load_activedrives() {
+   document.getElementById("htmlload").innerHTML='<object style="width:95rem; margin-left:-60px; margin-top:-50px; height:100vh; " type="text/html" data="JobApplications.html" ></object>';
+    
+}
+//Results LOAD
+function load_Results() {
+     document.getElementById("htmlload").innerHTML='<object style="width:95rem; margin-left:-60px; margin-top:-50px; height:100vh; " type="text/html" data="UpdateResults.html" ></object>';
+} 
+
+
+    //------------------------------------REFERENCES-----------------------------------------
+
+    let userlink=document.getElementById('userlink');
+    // let header=document.getElementById('hh');
+    let signoutlink=document.getElementById('signoutlink');
+    var currentUser=null;
+   
+
+    //------------------------------------------FUNCTIONS-------------------------------------
+    function getUsername(){
+        let KeepLoggedIn=localStorage.getItem("KeepLoggedIn");
+
+        if(KeepLoggedIn =="yes"){
+            currentUser=JSON.parse(localStorage.getItem('user'));
+        }
+        else{
+            currentUser=JSON.parse(sessionStorage.getItem('user'));
+        }
+    }
+    function Signout(){
+        sessionStorage.removeItem('user');
+        localStorage.removeItem('user');
+        localStorage.removeItem('KeepLoggedIn');
+        window.location="cm-register.html";
+    }
+    
+    //--------------------------------------WINDOW LOADS-------------------------------------------
+    window.onload =function(){
+        getUsername(); 
+        if(currentUser==null){
+            userlink.innerText="Create New Account";
+            userlink.classList.replace("nav-link","btn");
+            userlink.classList.add("btn-primary");
+            userlink.href="cm-register.html";
+
+          signoutlink.innerText="login";
+           signoutlink.classList.replace("nav-link","btn");
+           signoutlink.classList.add("btn-success");
+           signoutlink.href="cm-login.html";
+        }
+        else{
+            userlink.innerText=currentUser.CompanyName;
+          
+            userlink.classList.replace("btn","nav-link");
+            userlink.classList.remove("btn-primary");
+            // userlink.href="CompanyProfileList.html";
+            
+          signoutlink.innerText="sign Out";
+           signoutlink.classList.replace("btn","nav-link");
+           signoutlink.classList.remove("btn-success");
+           signoutlink.href="javascript:Signout()";
+            
+        }
+    }
+    
+</script>
+
+</script>
+
+ </body>
+ </html>

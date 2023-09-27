@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/v4-shims.min.js" integrity="sha512-7cs6q0x+QVwp7v0xeHb8DYY9IR41u+viyQgQEpEYqOxL9OHOVNeA/nfBt9i/U+TRdS/NJnEemUgFvDa4qMhACw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/solid.min.js" integrity="sha512-Cw3lrAMFnu1XhNZB73mT27VptT/2szZ1sn2MLnPq+ATkY0qu16il+xEQdo4wDZCAVnO8QZ12547AfBZhO9M9cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/regular.min.js" integrity="sha512-JLKhm0RfxW/ni7SF0nf1G/0SLYF/y//3fZ53VTgjUkEkAGo3QtZkuDoNFQIlnyekVctAiImaKTAW4yqSP7asGw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/fontawesome.min.js" integrity="sha512-36dJpwdEm9DCm3k6J0NZCbjf8iVMEP/uytbvaiOKECYnbCaGODuR4HSj9JFPpUqY98lc2Dpn7LpyPsuadLvTyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/conflict-detection.min.js" integrity="sha512-OnJZvIhwzjyobquHi0nGMAIx0iRfbZr7eyWKsSJerRfGFiv7Ed0CytP9I52on/S0XOMKiqEBCarlOEfuyVjokw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/brands.min.js" integrity="sha512-3Zn/FU2NPNNFPn4888PtuSwAzZh7osT9728qBI3FcY33PywjzSM96QVjciohyurUKr6ketdyNYTdNvPauAnEmw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" integrity="sha512-2bMhOkE/ACz21dJT8zBOMgMecNxx0d37NND803ExktKiKdSzdwn+L7i9fdccw/3V06gM/DBWKbYmQvKMdAA9Nw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/v5-font-face.min.css" integrity="sha512-H2YXTLk5bs3DqvCfOEFsHmsjKW/qLp8SqsqVuPVwZzA5WFudPvPJisFKba2Km3sZNNBapYsZjSMTmRVcfxb5yw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/v4-shims.min.css" integrity="sha512-h2Z3EnLjRZp3KQxGYzT6SyqPrWIlmjnlJz/8q3BoZo2IN51insCNN7nmA4WHoe9eu1H5B3xLdLwKiVF8kF+Ewg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/v4-font-face.min.css" integrity="sha512-p0AmrzKP8l63xoFw9XB99oaYa40RUgDuMpdkrzFhi4HPHzO3bzyN2qP6bepe43OP3yj9+eGQEJGIGPcno1JdPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <style>
+        
+        body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 50px;
+    background-color: white;
+}
+ .dvr{
+    margin-top: 50px;
+    padding: -5px;
+    margin-left: 70px;
+    
+    padding-bottom: 0px;
+ }
+h3{
+  text-align: center;
+  font-size: 30px;
+  text-shadow: 0 0 5px teal;
+}
+.container{
+    margin-left: 450px;
+    background-color: white;
+   border: none;
+    width: 520px;
+    padding: 20px;
+     box-shadow: 0 5px 10px rgba(11, 9, 9, 0.929);
+}
+.dvr input{
+    border-radius: 5px;
+    width: 350px;
+   font-size: 15px;
+    height: 25px;
+    border:0.5px solid grey;
+    outline: none;
+    background-color:white;
+    margin:5px 10px;
+    padding: 9px;
+}
+
+.dvr select{
+    border-radius: 5px;
+    width: 370px;
+   font-size: 15px;
+    height: 45px;
+    border:0.5px solid grey;
+    outline: none;
+    background-color:white;
+    margin:5px 10px;
+    padding:9px;
+}
+
+.post button:hover{
+    background-color: rgb(7, 42, 239);
+    box-shadow: 0 5px 10px rgba(2, 2, 242, 0.929);
+    outline: none;
+}
+#upbtn:hover{
+ 
+    background-color: teal;
+}
+.post button{
+    width: 450px;
+    display:grid;
+   height: 50px;
+     padding: 8px ;
+     width: 350px;
+    margin-left:-10px;
+    border:none;
+    outline: none;
+    font-size: 20px ;
+    border-radius: 5px;
+    background-color:grey;
+    color: white;
+}
+#upbtn{
+    font-size:25px;
+   height: 50px;
+    font-weight: 550;
+     width: 150px;
+      margin-left: 100px;
+    border:none;
+    outline: none;
+     border-radius: 5px;
+    background-color:black;
+    color: white;
+}
+
+ #namebox{
+    background-color: white;
+    width: 300px;
+ }
+ #selbtn{
+    font-size: 35px;
+    color:teal;
+    background: none;
+    border: none;
+    outline: none;
+   margin-left:-10px;
+  
+   
+ }
+ #upprogress,#extlab{
+    display: NONE;
+ }
+    </style>
+    
+</head>
+<body>
+
+    <div class="container">
+        
+        <h3>JOB APPLICATION</h3>
+        <div class="dvr">
+    
+        
+     
+         <input type="text" placeholder="FullName" id="Name">
+         <input type="email" placeholder="PersonalMail" id="email">
+         <input type="text" placeholder="RegisterNumber" id="reg">
+         <input type="text" placeholder="Drive ID" id="DriveId">
+
+         <select id="dept">Department:
+          <option >MCA</option>
+          <option>BCA</option>
+          <option>B.TECH</option>
+          <option>EEE</option>
+          <option>CSE</option>
+          <option>M.TECH</option>
+          <option>BCA</option>
+          <option>ECE</option>
+          <option>B.SC(CS)</option>
+          
+         </select>
+    
+         <select id="year">Year:
+          <option>1st</option>
+          <option>2nd </option>
+          <option>3rd</option>
+          <option>4th</option>
+         </select>
+
+   
+    <input type="text" id="namebox" placeholder="Choose Resume">
+    <button id="selbtn"><i class="fa-solid fa-upload"></i></button>
+    <label id="extlab"></label><br><br>
+
+    <label id="upprogress"></label>
+<div class="btn">
+    
+    <button id="upbtn">Apply</button>
+    <!-- <button id="downbtn">Retrieve Image</button> -->
+</div>
+
+<!-- <div class="post">
+    <button id="post">Post</button>
+</div> -->
+</div>
+</div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.0/firebase-app.js";
+  
+        const firebaseConfig = {
+  apiKey: "AIzaSyCf8TkfipanvrO0Z_FHT9cHv5LvR9ImFfM",
+  authDomain: "placementdrive-c2866.firebaseapp.com",
+  databaseURL: "https://placementdrive-c2866-default-rtdb.firebaseio.com",
+  projectId: "placementdrive-c2866",
+  storageBucket: "placementdrive-c2866.appspot.com",
+  messagingSenderId: "798924021032",
+  appId: "1:798924021032:web:0fcf61762dadde9c42841d"
+};
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+        import{getStorage,ref as sRef,uploadBytesResumable,getDownloadURL} 
+        from"https://www.gstatic.com/firebasejs/9.17.0/firebase-storage.js"
+
+        //clous Realtime data base
+        import {getDatabase,ref,set,child,get,update,remove}
+        from "https://www.gstatic.com/firebasejs/9.17.0/firebase-database.js"
+        const realdb =getDatabase();
+
+
+
+        //-----------------------VARIABLE & REFERENCES------------------//
+        var files=[];
+        var reader=new FileReader();
+
+        var namebox=document.getElementById('namebox');
+        var extlab=document.getElementById('extlab');
+        var myimg=document.getElementById('myimg');
+        var proglab=document.getElementById('upprogress');
+        var SelBtn=document.getElementById('selbtn');
+        var UpBtn=document.getElementById('upbtn');
+        // var DownBtn=document.getElementById('downbtn');
+
+        var input = document.createElement('input');
+        input.type='file';
+
+        input.onchange = e =>{
+            files=e.target.files;
+
+            var extention = GetFileExt(files[0]);
+            var name= GetFileName(files[0]);
+
+            namebox.value=name;
+            extlab.innerHTML=extention;
+            reader.readAsDataURL(files[0]);
+        }
+        reader.onload= function() {
+        
+            myimg.src= reader.result;
+            
+        }
+//------------------SELECTION------------------------//
+SelBtn.onclick = function() {
+            input.click();
+            
+        }
+        function GetFileExt(file) {
+            var temp=file.name.split('.');
+            var ext=temp.slice((temp.length-1),(temp.length));
+            return '.'+ext[0];
+            
+        }
+        function GetFileName(file) {
+            var temp=file.name.split('.');
+            var fname=temp.slice(0,-1).join('.');
+            return fname;
+            
+        }
+
+//---------------------UPLOAD PROCESS--------------//
+
+async function UploadProcess() {
+            var ImgToUpload =files[0];
+            var ImgName=namebox.value;
+//+extlab.innerHTML
+            if(!ValidateName())
+            {
+                alert('Name Cannot Contain ".","#", "$","[",or"]"');
+                return;
+            }
+
+            const metaData={
+                contentType:ImgToUpload.type
+
+            }
+            const storage =getStorage();
+            const stroageRef =sRef(storage,"Resumes/"+ImgName);
+            const UploadTask = uploadBytesResumable(stroageRef,ImgToUpload,metaData);
+            UploadTask.on('state-changed',(snapshot)=>{
+                var progess = (snapshot. bytesTransferred / snapshot.totalBytes) * 100;
+                proglab.innerHTML = "Upload "+ progess + "%";
+
+
+            },
+            (error) =>{
+                alert("error:File not uploaded!");
+
+            },
+            ()=>
+            {
+                getDownloadURL(UploadTask.snapshot.ref).then((downloadURL)=>
+                {
+                    SaveURLtoRealtimDB1(downloadURL);
+                    SaveURLtoRealtimDB(downloadURL);
+                });
+            }
+
+            );
+            
+            
+        }
+
+
+
+
+
+function SaveURLtoRealtimDB1(URL) {
+    var name=namebox.value;
+    // var ext=extlab.innerHTML;
+
+    set(ref(realdb,"ResumeLinks/"+name),{
+        ResumeName:name,
+        ImgUrl:URL
+
+    });
+}
+function GetUrlfromRealtimDB() {
+        var name=namebox.value;
+        var dbref=ref(realdb);
+
+        get(child(dbref,"ResumeLinks/"+name)).then((snapshot)=>
+        {
+            if (snapshot.exists()) {
+                myimg.src=snapshot.val().ImgUrl;
+                
+            }
+        })
+
+        
+    }
+    function ValidateName() {
+        var regex=/[\.#$][\]]/
+        return !(regex.test(namebox.value));
+        
+    }
+        UpBtn.onclick=UploadProcess;
+        
+// DownBtn.onclick=GetUrlfromRealtimDB;
+
+
+
+        //-----------------------------------------------------------------------------------------------------------
+         
+        //--------------------------------------REFERENCES---------------------------------------------//
+const FullName=document.getElementById('Name');
+const Email=document.getElementById('email');
+const RegisterNumber=document.getElementById('reg');
+const DriveId=document.getElementById('DriveId');
+const Department=document.getElementById('dept');
+const Year=document.getElementById('year');
+const File=document.getElementById('res');
+const post=document.getElementById('post');
+
+//---------------REGISTER USER TO FIREBASE---------------------------------------------------------------------------//
+function SaveURLtoRealtimDB(URL){
+      const dbref = ref(realdb);
+      var name=namebox.value;
+      var ext=extlab.innerHTML;
+     
+      get(child(dbref,"JobApplication/"+RegisterNumber.value)).then((snapshot)=>{
+        if (snapshot.exists()){
+          alert("you have already submitted your application");
+        }
+        else{
+
+          set(ref(realdb,"JobApplication/"+RegisterNumber.value),
+          {
+
+            ResumeName:name,
+            ResumeFileUrl:URL,
+            RegisterNumber:RegisterNumber.value,
+            DriveId:DriveId.value,
+            FullName:FullName.value,
+            Email:Email.value,
+            Year:Year.value,
+            Department:Department.value,
+        //  File:File.value,
+
+       
+            
+            
+          })
+          .then(()=>{
+            alert("Posted Successfully!")
+          })
+          .catch((error)=>{
+            alert("error"+error);
+          })
+        }
+      });
+    }
+
+
+    //--------------------------ASSIGN THE EVENTS---------------------------------------------//
+ post.addEventListener('click',SaveURLtoRealtimDB);
+
+
+
+
+    </script>
+
+    
+</body>
+</html>

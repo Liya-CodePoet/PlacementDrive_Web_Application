@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRIVE REQUESTS</title>
+    <link rel="stylesheet"href="">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <style>
+      /* body{
+        background: none;
+      } */
+      #box{
+        /* display:flex; */
+        margin: -20px;
+        padding: 20px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 20px;
+       /* justify-content: center; */
+        display: flex;
+        width: 1400px;
+        flex-wrap: wrap;
+      }
+      #RequestCard{
+        background-color:white;
+        height: 460px;
+        width: 350px;
+        padding: 25px;
+        text-align: center;
+        /* align-items: center; */
+         justify-content:space-between; 
+        
+        flex-direction:column;
+        transition: border-color .3s;
+        margin: 20px;
+        box-shadow: 0px 5px 10px rgba(20, 20, 20, 0.756); 
+      }
+      label{
+        color: rgb(10, 9, 9);
+        display: flex;
+        flex-direction: column;
+      }
+      .Eligible{
+        color:rgb(8, 8, 8);
+        margin-top: -120px;
+        font-size: 17px;
+      }
+      .cn{
+      color: rgb(0, 55, 255);
+      font-size: 30px;
+      }
+      .jr{
+        font-size: 23px;
+        color: rgb(145, 141, 141);
+        margin-top: 120px;
+        padding: 15px;
+      }
+      .pack{
+        color: rgb(5, 1, 1);
+        font-size: 18px;
+        margin-top: -10px;
+      }
+      
+      .jt{
+        background-color: rgba(0, 128, 0, 0.731);
+        margin-left: -25px;
+        padding-left: 10px;
+        text-align: center;
+        margin-top: -190px;
+        width: 170px;
+        color: white;
+        font-size: 17px;
+        box-shadow: 0px 5px 10px rgba(20, 20, 20, 0.756); 
+
+      }
+      .loc{
+        margin-top: 200px;
+        color: grey;
+      }
+      .viewdetails{
+        background-color: rgba(16, 34, 234, 0.203);
+        margin-top: 120px;
+        color:rgb(13, 31, 228);
+        font-size: 25px;
+        outline: none;
+        border: none;
+        width:300px;
+        padding: 5px;
+      }
+     .viewdetails:hover{
+        background-color: rgba(7, 7, 205, 0.788);
+        color: white;
+        box-shadow: 0px 5px 10px rgba(20, 20, 20, 0.756); 
+
+      }
+
+      /* ---------------------------------------------SCROLL WEBKIT--------------------------------------------------------- */
+
+      ::-webkit-scrollbar {
+        width: 10px;
+        }
+         ::-webkit-scrollbar {
+       display: none;
+        } 
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(103, 64, 231); 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(98, 68, 245, 0.772); 
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(143, 79, 222, 0.756);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #8838f79d;
+}
+
+      @media screen and(max-width:894px){
+        #box{
+          justify-content: center;
+        }
+      }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+  
+  const firebaseConfig = {
+    apiKey: "AIzaSyCf8TkfipanvrO0Z_FHT9cHv5LvR9ImFfM",
+    authDomain: "placementdrive-c2866.firebaseapp.com",
+    databaseURL: "https://placementdrive-c2866-default-rtdb.firebaseio.com",
+    projectId: "placementdrive-c2866",
+    storageBucket: "placementdrive-c2866.appspot.com",
+    messagingSenderId: "798924021032",
+    appId: "1:798924021032:web:0fcf61762dadde9c42841d"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+   
+  import{getDatabase,ref,child,onValue,get}
+  from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+
+  const db=getDatabase();
+
+  var Outerdiv = document.getElementById("box");
+  var ArrayOfDrivePost=[];
+  window.addEventListener('load',GetAllDrivePost);
+  
+  function GetAllDrivePost()
+  {
+    const dbRef = ref(db);
+
+    get(child(dbRef,"DrivePost"))
+    .then((snapshot)=>{
+        snapshot.forEach(Post => {
+            ArrayOfDrivePost.push(Post.val());
+        });
+        AddAllPost();
+    })
+  }
+
+ function AddAllPost(){
+    let i=0;
+    ArrayOfDrivePost.forEach(Post=>{
+        AddAPost(Post,i++);
+    });
+    AssignEvents();
+ }
+
+ function PostDetails(){
+
+ }
+ function AddAPost(Post,index){
+    let html=`
+    <div id="RequestCard" id="scroll">
+    <label class="cn" id="CompanyName`+index+`">`+Post.CompanyName+`</label>
+    <label  class="jr" id="Jobrole `+index+`">`+Post.Jobrole+`</label>
+    <label  class="jt" id="Jobtype `+index+`">`+Post.Jobtype+`</label>
+    <label  class="loc" id="Location `+index+`">`+Post.Location+`</label>
+    <label  class="pack" id="Package `+index+`">`+Post.Package+` LPA</label>
+    <label  class="Eligible" id="E"`+index+`">Eligibility : `+Post.Eligibility+`</label>
+    
+    <button class="viewdetails" id="detbtn-`+index+`">View Details</button>
+    </div>
+    `
+
+    let newPost=document.createElement('div');
+    newPost.classList.add('RequestCard');
+    newPost.innerHTML=html;
+    Outerdiv.append(newPost);
+ }
+ function GetPostIndex(id){
+  var indstart=id.indexOf('-')+1;
+  var indend=id.length;
+  return Number(id.substring(indstart,indend));
+ }
+
+ function GoToPostDetails(event){
+  var index = GetPostIndex(event.target.id);
+  localStorage.Post = JSON.stringify(ArrayOfDrivePost[index]);
+  console.log(ArrayOfDrivePost[index]);
+  //  window.location="PostDetails.html";
+   var newWindow = window.open();
+ newWindow.document.location.href = "PostDetails.html";
+ }
+
+ function AssignEvents(){
+  var vdbtn = document.getElementsByClassName('viewdetails');
+   
+  for(let i=0;i<vdbtn.length;i++){
+    vdbtn[i].addEventListener('click',GoToPostDetails);
+  }
+ }
+    </script>
+</body>
+</html>

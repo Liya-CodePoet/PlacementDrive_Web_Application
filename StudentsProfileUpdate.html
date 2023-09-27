@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+   
+	<style>
+		/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: white;
+   font-family: "Poppins", sans-serif;
+}
+section {
+  position: fixed;
+  background: #e3f2fd;
+}
+button {
+  font-size: 22px;
+  font-weight: 400;
+  color: #fff;
+  background-color: teal;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  /* color:teal; */
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(13, 186, 186);
+}
+button.show-modal,
+.modal-box {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  padding: 50px 50px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+section.active .show-modal {
+  display: none;
+}
+.overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top:0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+section.active .overlay {
+  opacity:1;
+  
+  pointer-events:auto;
+}
+.modal-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+   width: 1000px;
+  height: 650px;
+  padding: 30px 20px;
+  border-radius: 24px;
+    opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+section.active .modal-box {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal-box h2 {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 500;
+  color: #333;
+}
+.modal-box h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+}
+.modal-box .buttons {
+  margin-top: 10px;
+  margin-left: 350px;
+ 
+}
+.modal-box button {
+  font-size: 18px;
+  padding: 14px 25px;
+  margin: 0 10px;
+}
+
+select{
+    padding: 10px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  background: none;
+  width: 274px;
+  color: black;
+}
+input[type="text"]{
+  padding: 10px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  background: none;
+  width: 274px;
+  color: black;
+}
+input[name="dob"]{
+  padding: 10px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  background: none;
+  width: 274px;
+  color: black;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+h1 {
+    margin-left: -500px;
+    margin-top: -140px;
+     font-family: sans-serif;
+       margin-bottom: -70px;
+    font-size: 40px;
+   color: teal;
+   text-shadow: 0 0 10px rgb(51, 51, 51);
+}
+label{
+  color: rgb(12, 12, 12);
+  margin-left: 25px;
+  font-size: 15px;
+}
+#survey_options{
+    display: flex;
+}
+.left{
+    margin:20px;
+    margin-top: 30px;
+}
+.right{
+    margin:20px;
+}
+.center{
+    margin: 20px;
+}
+.view{
+  font-weight: bold;
+  background-color: teal;
+  position: fixed;
+  left: 60%;
+  top: 41%;
+  padding: 50px 50px;
+}
+/*--------------------------------------------------------------------------------------------------------- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+}
+.move{
+  margin-top:15%;
+  
+}
+/* -----------------------------------------------profile pic styles  starts ------------------------------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+}
+.pro-circle{
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 53%;
+    left: 148%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid grey;
+}
+
+#myimg{
+    height: 100%;
+    width: 100%;
+}
+
+#file{
+    display: none;
+}
+
+#selbtn{
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: wheat;
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+}
+.pro-circle{
+    margin-left: -710px;
+    margin-top:-220px;
+    margin-bottom: 0px;
+}
+#namebox{
+    outline: none;
+    border:none;
+    color:teal;
+    margin-left:690px;
+    margin-top:170px;
+    /* font-weight: bold; */
+}
+
+
+  #upbtn{
+  display: none;
+  position:relative;
+    outline:none;
+    border: none;
+    color: blue;
+    margin-top: -150px;
+    margin-left: 590px;
+    background-color: white;
+    font-size: 35px;
+  
+}  
+
+/* -----------------------------------------------profile pic styles  ends ------------------------------------------------*/
+#ugdeg{
+  width: 60%;
+}
+#ugcgpa{
+  width: 40%;
+  margin-right: 3px;
+  
+}
+#ugins{
+  width: 320px;
+}
+#ugdeg,#ugcgpa{
+  margin-bottom: 0px;
+}
+.fif1{
+  display:flex;
+ 
+  /* flex-direction: row; */
+}
+
+#pgdeg{
+  width: 60%;
+}
+#RegNo{
+  width: 40%;
+}
+#ContactNo{
+  width: 60%;
+}
+#pgcgpa{
+  width: 40%;
+  margin-right: 3px;
+ }
+ #RegNo{
+  margin-right: 3px;
+ }
+#pgins{
+  width: 320px;
+}
+#pgdeg,#pgcgpa{
+  margin-bottom: 0px;
+}
+#RegNo,#ContactNo{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+#dept{
+  margin-right: 3px;
+ }
+#Year,#dept{
+  width: 50%;
+  /* margin-top: 0px; */
+  margin-bottom: 0px;
+}
+#upprogress{
+  color: red;
+}
+</style>
+
+  </head>
+  <body>
+    
+     
+    <section>
+     <button class="show-modal">ADD PROFILE</button> 
+      <span class="overlay"></span>
+      <div class="modal-box">
+        
+       
+          <div class="pro-circle">  
+              <img src="images/dp.jpg" id="myimg">
+            <input type="file" id="file">
+             <label for="file" id="selbtn">choose Image</label>
+          </div>
+          <!-- <div class="can"> -->
+              <input type="text" id="namebox">
+          <!-- <label id="extlab"></label> -->
+           <button id="upbtn"><i class="fa-solid fa-upload"></i></button> 
+          <label id="upprogress"></label>
+          <!-- </div> -->
+         
+       
+<!-- ---------------------------------------------------------------------------------------------------- -->
+<h1>ADD PROFILE</h1>        
+<div class="move">
+        <div id="survey_options">
+            <div class="left">
+            <input type="text" name="survey_options[]" class="survey_options" id="CandidateName"  size="50" placeholder="Candidate Name">
+            <div class="fif1">
+            <input type="text" name="survey_options[]" class="survey_options" id="RegNo" size="50" placeholder="RegisterNo">
+            <input type="text" name="survey_options[]" class="survey_options" id="ContactNo" size="50" placeholder="Contact Number">
+         
+          </div>
+          <div class="fif1">
+            <select id="dept">
+                <option>MCA</option>
+                <option>EEE</option>
+                <option>B.TECH</option>
+                <option>IT</option>
+                <option>CSE</option>
+                <option>M.TECH</option>
+                <option>BCA</option>
+                <option>BE</option>
+                <option>ME</option>
+                <option>BSC</option>
+                <option>B.COM</option>
+                <option>M.COM</option>
+            </select>
+            <select id="Year">
+              <option>1st</option>
+              <option>2nd</option>
+              <option>3rd</option>
+              <option>4th</option>
+              </select>
+          </div>
+            <input type="text" name="survey_options[]" class="survey_options" id="pm" size="50" placeholder="Personal Mail ID">
+                    <input type="text" name="dob" id="dob"class="survey_options" onfocus="(this.type='date')" size="50" placeholder="DOB">
+          
+                </div>
+                <div class="right">
+                    <H3>10TH</H3>
+                    <input type="text" name="survey_options[]" class="survey_options" id="10cgpa"  size="50" placeholder="CGPA">
+                    <input type="text" name="survey_options[]" class="survey_options" id="10ins"  size="50" placeholder="Institute Name">
+                    <H3>12TH</H3>
+                    <input type="text" name="survey_options[]" class="survey_options" id="12cgpa"  size="50" placeholder="CGPA">
+                    <input type="text" name="survey_options[]" class="survey_options" id="12ins"  size="50" placeholder="Institute Name">
+                   </div>
+
+                   <div class="center">
+                    <H3>UG</H3>
+                    <div class="fif1">
+                    <input type="text" name="survey_options[]" class="survey_options" id="ugcgpa"  size="50" placeholder="CGPA">
+                    <input type="text" name="survey_options[]" class="survey_options" id="ugdeg"  size="50" placeholder="Degree">
+                    </div>
+                    <input type="text" name="survey_options[]" class="survey_options" id="ugins"  size="50" placeholder="Institute Name">
+                    <H3>PG</H3>
+                    <div class="fif1">
+                    <input type="text" name="survey_options[]" class="survey_options" id="pgcgpa"  size="50" placeholder="CGPA">
+                    <input type="text" name="survey_options[]" class="survey_options" id="pgdeg"  size="50" placeholder="Degree">
+                    
+                    </div>
+                    <input type="text" name="survey_options[]" class="survey_options" id="pgins"  size="50" placeholder="Institute Name">
+                    
+                    </div>
+        </div>
+       
+    
+     <!-- ------------------------------------------------------------------------------------------------------------ -->    
+
+        <div class="buttons">
+            <button class="snd-btn" id="snd-btn">Save</button>
+          <button class="close-btn">Cancel</button>
+                </div>  
+              </div> 
+    </section>
+    <div  id="htmlload"> </div>
+
+    
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.0/firebase-app.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCf8TkfipanvrO0Z_FHT9cHv5LvR9ImFfM",
+  authDomain: "placementdrive-c2866.firebaseapp.com",
+  databaseURL: "https://placementdrive-c2866-default-rtdb.firebaseio.com",
+  projectId: "placementdrive-c2866",
+  storageBucket: "placementdrive-c2866.appspot.com",
+  messagingSenderId: "798924021032",
+  appId: "1:798924021032:web:0fcf61762dadde9c42841d"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+
+      import {getDatabase,ref,set,child,get,update,remove} 
+      from "https://www.gstatic.com/firebasejs/9.17.0/firebase-database.js";
+
+
+      const db = getDatabase();
+
+
+      //-----------------PROFILE PIC CHOOSE PHOTO HOVER--------------------------------------------
+       //declearing html elements
+const imgDiv = document.querySelector('.pro-circle');
+const img = document.querySelector('#myimg');
+const file = document.querySelector('#file');
+const selbtn = document.querySelector('#selbtn');
+//if user hover on img div 
+imgDiv.addEventListener('mouseenter', function(){
+    selbtn.style.display = "block";
+});
+//if we hover out from img div
+imgDiv.addEventListener('mouseleave', function(){
+    selbtn.style.display = "none";
+});
+//lets work for image showing functionality when we choose an image to upload
+//when we choose a foto to upload
+file.addEventListener('change', function(){
+    //this refers to file
+    const choosedFile = this.files[0];
+    if (choosedFile) {
+        const reader = new FileReader(); //FileReader is a predefined function of JS
+        reader.addEventListener('load', function(){
+            img.setAttribute('src', reader.result);
+        });
+        reader.readAsDataURL(choosedFile);
+           }
+});
+
+      //--------------------------REFERENCES-----------------------------------------------------------------------------//
+      
+      const CandidateName=document.getElementById('CandidateName');
+      const RegisterNumber =document.getElementById('RegNo');
+      const ContactNo =document.getElementById('ContactNo');
+      const Department=document.getElementById('dept');
+      const Year=document.getElementById('Year');
+        const MailID=document.getElementById('pm');
+      const DOB=document.getElementById('dob');
+        
+      const tencgpa =document.getElementById('10cgpa');
+       const tenins=document.getElementById('10ins');
+
+       const twelvecgpa =document.getElementById('12cgpa');
+       const twelveins=document.getElementById('12ins');
+
+       const ugcgpa =document.getElementById('ugcgpa');
+       const ugins=document.getElementById('ugins');
+       const ugdeg=document.getElementById('ugdeg');
+
+
+       const pgcgpa =document.getElementById('pgcgpa');
+       const pgins=document.getElementById('pgins');
+       const pgdeg=document.getElementById('pgdeg');
+
+      const Submit=document.getElementById('snd-btn');
+    
+   
+
+
+      const section = document.querySelector("section"),
+        overlay = document.querySelector(".overlay"),
+        showBtn = document.querySelector(".show-modal"),
+        closeBtn = document.querySelector(".close-btn");
+
+      showBtn.addEventListener("click", () => section.classList.add("active"));
+
+      overlay.addEventListener("click", () =>
+        section.classList.remove("active")
+      );
+
+      closeBtn.addEventListener("click", () =>
+        section.classList.remove("active")
+      );
+
+ //-------------------------------------------PROFILE PIC UPLOAD PROCESS STARTS-----------------------------------------------------
+ var files=[];
+  var reader=new FileReader();
+  import{getStorage,ref as sRef,uploadBytesResumable,getDownloadURL} 
+  from"https://www.gstatic.com/firebasejs/9.17.0/firebase-storage.js"
+
+
+  var namebox=document.getElementById('namebox');
+  var extlab=document.getElementById('extlab');
+  var myimg=document.getElementById('myimg');
+  // var link=document.getElementById('texts');
+  // var proglab=document.getElementById('upprogress');
+  var SelBtn=document.getElementById('selbtn');
+  // var UpBtn=document.getElementById('upbtn');
+  // var DownBtn=document.getElementById('downbtn');
+
+  var input = document.createElement('input');
+  input.type='file';
+
+  input.onchange = e =>{
+      files=e.target.files;
+
+      var extention = GetFileExt(files[0]);
+      var name= GetFileName(files[0]);
+
+     namebox.value=name;
+      // extlab.innerHTML=extention;
+      reader.readAsDataURL(files[0]);
+  }
+  reader.onload= function() {
+  
+      myimg.src= reader.result;
+      
+  }
+
+  SelBtn.onclick = function() {
+      input.click();
+      
+  }
+  function GetFileExt(file) {
+      var temp=file.name.split('.');
+      var ext=temp.slice((temp.length-1),(temp.length));
+      return '.'+ext[0];
+      
+  }
+  function GetFileName(file) {
+      var temp=file.name.split('.');
+      var fname=temp.slice(0,-1).join('.');
+      return fname;
+      
+  }
+
+
+async function UploadProcess() {
+            var ImgToUpload =files[0];
+            var ImgName=namebox.value;
+            // +extlab.innerHTML;
+            if(!ValidateName())
+            {
+                alert('Name Cannot Contain ".","#", "$","[",or"]"');
+                return;
+            }
+
+            // const metaData={
+            //     contentType:ImgToUpload.type
+
+            // }
+            const storage =getStorage();
+            const stroageRef =sRef(storage,"ProfilePic/"+ImgName);
+            const UploadTask = uploadBytesResumable(stroageRef,ImgToUpload);
+            UploadTask.on('state-changed',(snapshot)=>{
+                // var progess = (snapshot. bytesTransferred / snapshot.totalBytes) * 100;
+                // proglab.innerHTML = "Upload"+ progess + "%";
+
+
+            },
+            (error) =>{
+                alert("error:Image not uploaded!");
+
+            },
+            ()=>
+            {
+                getDownloadURL(UploadTask.snapshot.ref).then((downloadURL)=>
+                {
+                    SaveURLtoRealtimDB1(downloadURL);
+                    SaveURLtoRealtimDB(downloadURL);
+                });
+            }
+
+            );
+            
+            
+        }
+
+
+
+
+
+function SaveURLtoRealtimDB1(URL) {
+    var name=namebox.value;
+    //  var ext=extlab.innerHTML;
+
+    set(ref(db,"StudentProfileLinks/"+name),{
+        ImageName:name,
+        ImgUrl:URL
+
+    });
+}
+function GetUrlfromRealtimDB() {
+        var name=namebox.value;
+        var dbref=ref(db);
+
+        get(child(dbref,"StudentProfileLinks/"+name)).then((snapshot)=>
+        {
+            if (snapshot.exists()) {
+                myimg.src=snapshot.val().ImgUrl;
+                
+            }
+        })
+
+        
+    }
+    function ValidateName() {
+        var regex=/[\.#$][\]]/
+        return !(regex.test(namebox.value));
+        
+    }
+        // UpBtn.onclick=UploadProcess;
+
+        function SaveURLtoRealtimDB(URL){
+      const dbref = ref(db);
+      var name=namebox.value;
+      // var ext=extlab.innerHTML;
+     
+      get(child(dbref,"StudentProfile/"+CandidateName.value)).then((snapshot)=>{
+        if (snapshot.exists()){
+          alert("you have already submitted your application");
+        }
+        else{
+
+          set(ref(db,"StudentProfile/"+CandidateName.value),
+          {
+
+            CandidateName:CandidateName.value,
+            RegisterNumber:RegisterNumber.value,
+            ContactNo:ContactNo.value,
+             Department:Department.value,
+             Year:Year.value,
+             MailID:MailID.value,
+              DOB:DOB.value,
+
+              tencgpa:tencgpa.value,
+              tenins:tenins.value,
+
+              twelvecgpa:twelvecgpa.value,
+              twelveins:twelveins.value,
+
+              ugcgpa:ugcgpa.value,
+              ugins:ugins.value,
+              ugdeg:ugdeg.value,
+
+              pgcgpa:ugcgpa.value,
+              pgins:ugins.value,
+              pgdeg:pgdeg.value,
+
+              ImageName:name,
+              ImgUrl:URL
+        
+       
+            
+            
+          })
+          .then(()=>{
+            alert("Posted Successfully!")
+          })
+          .catch((error)=>{
+            alert("error"+error);
+          })
+        }
+      });
+    }
+
+
+    //--------------------------ASSIGN THE EVENTS---------------------------------------------//
+//  Submit.addEventListener('click',SaveURLtoRealtimDB);
+ Submit.addEventListener('click',UploadProcess);
+
+ 
+
+
+
+    </script>
+  </body>
+</html>
+

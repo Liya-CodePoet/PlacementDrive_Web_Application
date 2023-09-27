@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRIVE REQUESTS</title>
+    <link rel="stylesheet"href="">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    </head>
+    <style>
+        .labs{
+     display:inline-block;
+     width: 200px;
+     font-size:17px;
+     font-weight: 500;
+         }
+input{
+    height: 35px;
+   width: 247px;
+    border-radius: 5px;
+    outline: none;
+    border:2px solid rgba(128, 128, 128, 0.685);
+    }
+#greet{
+    font-size: 20px;
+    font-weight: bold;
+    color: teal;
+    margin-top: 15px;
+    margin-left: 300px;
+    text-shadow: 0px 0px 13px rgb(35, 34, 34); 
+ }
+.footer{
+    width: 1110px;
+    height: 70px;
+    border-top: 0.5px solid rgb(227, 217, 217);
+}
+.container label{
+    margin-left: 250px;
+    
+}
+.container{
+    margin-left: 10px;
+    
+  
+    
+}
+.frame{
+    background-color:rgba(177, 244, 244, 0.566);
+   
+}
+h4{
+    font-size: 25px;
+    font-weight: 700;
+    padding: 5PX;
+    color:black;
+    text-shadow: 0px 0px 13px teal; 
+     }
+     
+h4:hover{
+    color: teal;
+}
+BODY{
+    background-color: white;
+    margin:50px;
+    margin-left: 200px;
+}
+.modal-title{
+    font-size: 25px;
+    text-transform: uppercase;
+    text-shadow: 10px 5px 13px teal; 
+       color:white;
+}
+.modal-title:hover{
+    text-shadow: teal;
+    color: teal;
+}
+.modal-header{
+    background-color: black;
+}
+#log-btn,#Selbtn{
+    font-weight: 500;
+    border: none;
+    outline: none;
+}
+#Selbtn{
+    background-color: teal;
+}
+#Selbtn:hover{
+    background-color: rgba(0, 128, 128, 0.801);
+}
+#log-btn:hover{
+    background-color: black;
+}
+
+</style>
+
+<body>
+<div class="container">
+    <H4>CHECK YOUR INTERVIEW RESULTS HERE...</H4> 
+   <!-- Modal2 starts -->
+     <div  id="exampleModalCenter2" role="dialog" aria-labelledby="exampleModalCenterTitle" >
+        <div role="document">
+      <form class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"> Control Panel</h5>
+          </button>
+        </div>
+        <div class="frame">
+           
+            <form action="">
+               
+                    <br>
+                    <label class="labs"for="">Enter your RegisterNo:</label>
+                    <input type="text" id="RegMod1" required="required"><span></span>
+                    <button id="Selbtn" type="button" class="btn btn-primary">Get Results</button>
+                    <button type="submit"id="log-btn" class="btn btn-secondary">Clear </button><br><br>
+                
+                    <label class="labs"for="">Name:</label>
+                    <input type="text" id="NameMod1" required="required"><br>
+               
+                    <label   class="labs" for="">Email:</label>
+                    <input type="text" id="EmailMod1" required="required"><br>
+               
+               
+                    <label class="labs" for=""> Register No:</label>
+                    <input type="text" id="RegMod2" required="required"><br>
+                
+                
+                    <label class="labs" for=""> DriveID:</label>
+                    <input type="text" id="DriveIDMod1" required="required"><br>
+               
+                
+                    <label class="labs" for=""> Company:</label>
+                    <input type="text" id="CompanyMod1" required="required"><br>
+                
+                
+                    <label class="labs" for=""> Department:</label>
+                    <input type="text" id="DeptMod1" required="required"><br>
+                
+               
+                    <label class="labs" for="">Year:</label>
+                    <input type="text" id="YearMod1" required="required"><br><br>
+               
+                
+            
+                  <div class="footer">
+                    <label id="greet"></label>
+                    </div>
+            </form>
+        </div>
+    </div> 
+</div>
+</div>
+<!-- model2 ends -->
+
+
+        <script type="module">
+
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.0/firebase-app.js";
+      
+      const firebaseConfig = {
+        apiKey: "AIzaSyCf8TkfipanvrO0Z_FHT9cHv5LvR9ImFfM",
+        authDomain: "placementdrive-c2866.firebaseapp.com",
+        databaseURL: "https://placementdrive-c2866-default-rtdb.firebaseio.com",
+        projectId: "placementdrive-c2866",
+        storageBucket: "placementdrive-c2866.appspot.com",
+        messagingSenderId: "798924021032",
+        appId: "1:798924021032:web:0fcf61762dadde9c42841d"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+ 
+    
+
+        import { getDatabase, ref, set, child, get ,update,remove} 
+        from "https://www.gstatic.com/firebasejs/9.17.0/firebase-database.js";
+
+
+        const db = getDatabase();
+
+        //--------------------------REFERENCES-----------------------------------------------------------------------------//
+        
+       
+       
+
+ 
+        //---------------------REFERENCES FOR MODEL WINDOW-----------------------------------------------
+
+        var NameMod1=document.getElementById('NameMod1');
+        var EmailMod1=document.getElementById('EmailMod1');
+        var RegMod1=document.getElementById('RegMod1');
+        var DriveIDMod1=document.getElementById('DriveIDMod1');
+        var CompanyMod1=document.getElementById('CompanyMod1');
+        var DeptMod1=document.getElementById('DeptMod1');
+        var YearMod1=document.getElementById('YearMod1');
+            
+        
+        var greet=document.getElementById('greet');
+           
+
+
+            ///-----------------------SEARCH-UPDATE-DELETE OPERATIONS------------------------------------------
+            var selbtn=document.getElementById("Selbtn");
+           
+
+            //--------------------Search data function---------------------//
+            function SelectData()
+            {
+                const dbref=ref(db);
+
+                get(child(dbref,"Results/"+RegMod1.value)).then((snapshot)=>{
+                    if(snapshot.exists())
+                    {
+                        NameMod1.value=snapshot.val().Name;
+                        // NameMod2.value=snapshot.val().Name;
+                        EmailMod1.value=snapshot.val().Email;
+                        RegMod1.value=snapshot.val().RegisterNumber;
+                        RegMod2.value=snapshot.val().RegisterNumber;
+                        DriveIDMod1.value=snapshot.val().DriveID;
+                        CompanyMod1.value=snapshot.val().CompanyName;
+                        DeptMod1.value=snapshot.val().Department;
+                        YearMod1.value=snapshot.val().Year;
+                        greet.innerHTML=("Congrats!&nbsp;<i class='fa-solid fa-handshake-simple'></i> you are Selected in ");
+                        greet.innerHTML+=snapshot.val().CompanyName;
+
+                    }
+                    else{
+                        alert("better Luck Next Time 🧐");
+                    }
+
+                })
+                .catch((error)=>
+                {
+                    alert("Unsuccessful, Error 🤯"+error);
+                });
+            }
+
+            //--------------------Assign Events to Btns---------------------//
+           
+            selbtn.addEventListener("click",SelectData);
+           
+</script>
+   <script>
+ //------------------------- SEARCH BAR FUNCTION--------------------------------------------------//
+    
+        </script>
+    </body>
+    </html>
