@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRIVE POST FORM</title>
+    <link rel="stylesheet"href="">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <style>
+        body{
+          justify-content:center;
+          align-items: center;
+          height: 120vh;
+          width: 100vw;
+          /* background: none; */
+          margin: 20px;
+          font-family: 'Poppins', sans-serif;
+          margin-bottom: 50px;
+           overflow-y:scroll;
+          overflow-x:hidden; 
+          
+        
+        }
+        ::-webkit-scrollbar {
+        width: 10px;
+        }
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px  teal; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: teal; 
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px teal;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:teal;
+}
+       .input{
+        padding: 10px;
+        border-radius: 5px;
+        outline: none;
+        border:0.2px solid grey;
+        width: 20rem;
+        margin-bottom: 10px;
+       
+        /* display: flex; */
+        /* flex-direction: row; */
+         }
+       
+       input:hover{
+       /* border-color: rgb(0, 0, 0); */
+       box-shadow: 0 1px 8px teal;
+       }
+
+       select{
+        /* padding: 10px; */
+        width: 37rem;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        
+       }
+       select:hover{
+        /* border-color: rgb(0, 0, 0); */
+        box-shadow: 0 1px 8px teal;
+       }
+
+       .ta{
+        padding: 10px;
+        width: 62.8rem;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        outline: none;
+        border:0.2px solid grey;
+       }
+       .ta:hover{
+        /* border-color: rgb(0, 0, 0); */
+        box-shadow: 0 1px 8px teal;
+       }
+       .input0{
+        padding: 12px;
+        border-radius: 5px;
+        outline: none;
+        border:0.2px solid grey;
+        width: 16.5rem;
+        margin-bottom: 10px;
+       }
+       .buttons{
+        margin-top: -40px;
+        margin-left: 35rem;
+        margin-bottom: 50px
+       }
+       .btn{
+        font-weight: bold;
+        color: teal;
+        /* background-color: #2357fc; */
+        margin-left: 45px;
+        padding: 10px 30px;
+        display:inline-flex;
+        flex-direction:row;
+       }
+       .btn:hover{
+background-color: teal;
+       }
+       .input-group-text{
+        padding: 15px;
+        margin-left: -10px;
+        margin-top: 10px;
+        height: 52px;
+       }
+      .inputfields{
+        display: flex;
+        margin: 50px;
+           margin-left: 260px;    
+      }
+/* .rightside{
+  margin: 50px;
+  margin-top: -10px;
+} */
+h2{
+ text-align: center;
+ color: teal;
+ font-weight: 700;
+ margin-bottom: -30px;
+ text-shadow: 1px 1px 5px black; 
+}
+.lpa{
+  border-radius:5px;
+  padding: 0;
+}
+.first,.sec,.third,.one,.two,.three{
+ 
+  display: flex;
+  
+}
+#CompanyName,#Jobrole,#Location,#DriveId,#Jobtype,#Package,#E,#v,#so,#r1t,#r1d,#r1n,#r2t,#r2d,#r2n,#r3t,#r3d,#r3n{
+  margin:10px;
+}
+#DriveId{
+  width:35.5rem;
+}
+label{
+  margin-left: -25px;
+  margin-top: 20px;
+}
+      </style>
+<body>
+<div class="scroll">  
+  <h2>DRIVE POST</h2>
+<div class="inputfields">
+    <div class="leftside">
+      
+      <form id="myForm">
+        <div class="first">
+          <input type="text" placeholder="CompanyName" id="CompanyName"  name="CompanyName" class="input">
+          <input type="text" placeholder="Jobrole" id="Jobrole" name="Jobrole" class="input">
+          <input type="text" placeholder="Location" id="Location"  class="input">
+          
+        </div>
+        <div class="sec">
+            <input type="text" placeholder="DriveId" id="DriveId"  class="input">
+             <select id="Jobtype" name="Jobtype">
+                <option>FullTime Employees</option>
+                <option>Intern</option>
+            </select> 
+            <div class="input-group">
+                <input type="text" placeholder="Package" id="Package" class="input0">
+                <div class="">
+                <span id="lpa" class="input-group-text">LPA</span>
+                </div>
+
+            </div>
+          </div>
+          <div class="third">
+            <input type="text" class="input"  placeholder="Starts On" onfocus="(this.type='date')"  id="so"  class="input">
+            <input type="text" class="input" placeholder="Interview Venue" id="v">
+            <input type="text" placeholder="Elibility" id="E"  class="input"> 
+          </div>
+          <div class="rightside">
+            <div class="one">
+              <label>R1</label>  <input class="input" type="text" placeholder="Time" id="r1t" onfocus="(this.type='time')">
+            <input class="input" type="text" placeholder="Date" id="r1d" onfocus="(this.type='date')">
+            <input class="input" type="text" placeholder="Round-1 Name" id="r1n">   
+          </div>
+          <div class="two">          
+         <label>R2</label>  <input  class="input"type="text" placeholder="Time" id="r2t" onfocus="(this.type='time')">
+                 <input class="input" type="text" placeholder="Date" id="r2d" onfocus="(this.type='date')">
+                 <input class="input" type="text" placeholder="Round-2 Name" id="r2n">
+                </div>
+                <div class="three">
+                  <label>R3</label>  <input class="input" type="text" placeholder="Time" id="r3t" onfocus="(this.type='time')">
+            <input class="input" type="text" placeholder="Date" id="r3d" onfocus="(this.type='date')">
+             <input class="input" type="text" placeholder="Round-3 Name" id="r3n">
+            </div>
+             </div>     
+        <textarea class="ta" type="text" row="10" cols="62" id="Message" placeholder="Instructions..."></textarea> 
+      </div>
+          </div>
+
+       
+
+         <div class="buttons"> 
+          <button type="button" value="reset" onclick="reset()" class="btn  btn-outline-success">RESET</button>
+      </form>
+        <button type="submit" value="submit" id="snd-btn" class="btn  btn-outline-success">POST</button>  
+         </div> 
+           </div>
+  
+  <script  type="module">
+
+      
+    //------------------------------DISABLE DATES----------------------------------------------//
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    
+    today = yyyy + '-' + mm + '-' + dd;
+    $('#so').attr('min',today);
+    $('#r1d').attr('min',today);
+    $('#r2d').attr('min',today);
+    $('#r3d').attr('min',today);
+   
+//-----------------------------------------------------------------------------------------------------------
+
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCf8TkfipanvrO0Z_FHT9cHv5LvR9ImFfM",
+  authDomain: "placementdrive-c2866.firebaseapp.com",
+  databaseURL: "https://placementdrive-c2866-default-rtdb.firebaseio.com",
+  projectId: "placementdrive-c2866",
+  storageBucket: "placementdrive-c2866.appspot.com",
+  messagingSenderId: "798924021032",
+  appId: "1:798924021032:web:0fcf61762dadde9c42841d"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+  
+
+      import { getDatabase, ref, set, child, get } 
+      from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+
+
+      const db = getDatabase();
+
+
+      //--------------------------REFERENCES-----------------------------------------------------------------------------//
+      
+      const CompanyName=document.getElementById('CompanyName');
+      const Jobrole =document.getElementById('Jobrole');
+      const StartsOn=document.getElementById('so');
+        const DriveId=document.getElementById('DriveId');
+      const Jobtype=document.getElementById('Jobtype');
+        const Venue =document.getElementById('v');
+       const Eligibility=document.getElementById('E');
+
+       const r1t=document.getElementById('r1t');
+       const r1d=document.getElementById('r1d');
+       const r1n=document.getElementById('r1n');
+
+       const r2t=document.getElementById('r2t');
+       const r2d=document.getElementById('r2d');
+       const r2n=document.getElementById('r2n');
+
+       const r3t=document.getElementById('r3t');
+       const r3d=document.getElementById('r3d');
+       const r3n=document.getElementById('r3n');
+
+      const Location=document.getElementById('Location');
+       const Message=document.getElementById('Message');
+      const Package=document.getElementById('Package');
+      const Submit=document.getElementById('snd-btn');
+    const Reset=document.getElementById('rst-btn');
+
+       
+
+       
+      
+    //---------------REGISTER USER TO FIREBASE---------------------------------------------------------------------------//
+    function DrivePost(){
+      const dbref = ref(db);
+
+      // get(child(dbref,"DrivePost/"+CompanyName.value)).then((snapshot)=>{
+      //   if (snapshot.exists()){
+      //     alert("Account Already Exist!");
+      //   }
+      //   else{
+          set(ref(db,"DrivePost/"+CompanyName.value),
+          {
+            CompanyName:CompanyName.value,
+            Jobrole:Jobrole.value,
+             StartsOn:StartsOn.value,
+             DriveId:DriveId.value,
+              Jobtype:Jobtype.value,
+              Venue:Venue.value,
+             Eligibility:E.value,
+             Location:Location.value,
+              Message:Message.value,
+             Package:Package.value,
+             r1t:r1t.value,
+             r1d:r1d.value,
+             r1n:r1n.value,
+
+             r2t:r2t.value,
+             r2d:r2d.value,
+             r2n:r2n.value,
+
+             r3t:r3t.value,
+             r3d:r3d.value,
+             r3n:r3n.value,
+            
+            
+          })
+          .then(()=>{
+            alert("Posted Successfully!")
+          })
+          .catch((error)=>{
+            alert("error"+error);
+          })
+        }
+    //   });
+    // }
+    
+
+//--------------------------ASSIGN THE EVENTS---------------------------------------------//
+ Submit.addEventListener('click',DrivePost);
+
+//----------------------------RESET BTN----------------------------------------------------//
+function reset(){
+document.getElementById("myForm").reset();  
+}
+  </script>
+</body> 
+
+
